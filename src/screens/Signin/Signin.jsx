@@ -1,7 +1,7 @@
-import "./Validator.css"
+
 import { useState } from "react";
 
-function Validator() {
+function SignIn() {
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -38,7 +38,7 @@ function Validator() {
   }
   return (
     <div className="form">
-      <h1>Sign Up</h1>
+      <h1>Sign In</h1>
       <form onSubmit={handleSubmit}>
       <input onChange={handleChange} id="username" value={user.username} type="text" placeholder="username" />
       <input onChange={handleChange}  id="password"value={user.password} type="password" placeholder="password" />
