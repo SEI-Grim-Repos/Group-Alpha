@@ -1,27 +1,30 @@
-// This imports the event from the homepage. Update later: 
-// import { event } from /homepage.jsx
 import { React } from "react";
 
-// data structure:
-// image 
-// description 
-// location 
-// likes
-// comments
-
-//selectedPost is a state type property in each of the posts when they are put in the feed. 
-const Modal = ({ currentPost, modalOpen }) => {
+const Modal = ({ currentPost, setModalOpen }) => {
     
     const handleClose = () => {
-      setIsOpen(false);
+      setModalOpen(false);
     };
+
+    function displayComments (currentComment){
+        <div>{currentComment}</div>
+    }
   
     return (
         <>
-
+            <img src={currentPost.image}/>
+            <div>{currentPost.description}</div>
+            <div>{currentPost.location}</div>
+            <div>{currentPost.likes}</div>
+            <div>
+                {currentPost.comments.forEach(displayComments(currentComment))}
+            </div>
+            <button onClick={handleClose}>Close</button>
         </>
     )
 }
+
+export default Modal; 
 
 // write post component 
 // write .map function to populate home.jsx with post components 
