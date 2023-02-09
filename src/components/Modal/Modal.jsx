@@ -13,7 +13,8 @@ const Modal = ({ currentPost, setModalOpen }) => {
     return (
         <>
             <img src={currentPost.image}/>
-            <div>{currentPost.description}</div>
+            <div>{currentPost.title}</div>
+            <div>{currentPost.body}</div>
             <div>{currentPost.location}</div>
             <div>{currentPost.likes}</div>
             <div>
