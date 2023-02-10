@@ -1,22 +1,72 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
+.form {
+    width: 400px;
+    margin-top: 20px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(21, 38, 49);
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
   }
   
-  form {
-    width: 300px;
-    height: 300px;
+  .form {
+    text-align: center;
+    margin-bottom: 20px;
   }
   
-  input {
+  @media screen and (max-width: 560px) {
+    .form {
+      max-width: 360px;
+    }
+  }
+  
+  label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
   
-  input[type="text"], input[type="password"] {
-    width: 200px;
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #152605;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #0a0b0a;
+  }
+  
+  #submitCredentials {
+    background-color: rgb(149 202 218 / 73%);
+    border: 2px solid rgba(102, 99, 99, 0.191);
+    padding: 7px 36px;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-top: 17px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
+  }
+  #submitCredentials:hover {
+    background-color: rgba(71, 107, 117);
+    color: white;
+    cursor: pointer;
+    transform: scale(0.9);
+    transition: 0.3s all ease;
+  }
+  .SigninLogo {
+    padding-bottom: 10px;
   }
