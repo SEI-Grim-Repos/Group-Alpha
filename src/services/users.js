@@ -37,3 +37,12 @@ try {
     throw error;
 }
 };
+
+export const deleteUser = async (id) => {
+    try {
+      const response = await api.delete(`/Users/${id}`);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  };
