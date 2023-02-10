@@ -2,6 +2,8 @@
 import { useState } from "react";
 // Import React-Router-Dom
 import { Navigate } from "react-router-dom";
+// Import Context
+import { useAuthContext } from "../../Hooks/useLoginContext.js";
 // Import CSS
 import "./signin.css"
 
@@ -9,6 +11,7 @@ import "./signin.css"
 function Signin() {
   // Deconstruct useAuthContext to pull dispatch
   const { dispatch } = useAuthContext()
+  
   // Set useState object
   const [user, setUser] = useState({
     username: "",
@@ -48,6 +51,8 @@ function Signin() {
   }
   // Password Validation Function
   const passwordValidation = (pw) => {
+    // Variables for numbers and special characters
+    const specialChar = /[\s~`!@#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?()\._]/g
     const numChar = /\d/
     // Validate the password has the below criteria
     if (pw.length >= 8 && specialChar.test(pw) && numChar.test(pw)) return true
@@ -58,6 +63,7 @@ function Signin() {
   const result = (validation) => {
     if (validation === "") {
       // Ensure reset of <p> when values are reset after submitting
+      return <p></p>
     // If the passwords match...
     } else if (validation === true) {
       // Vaidate if they meet the specified criteria and return <p> accordingly
@@ -65,6 +71,7 @@ function Signin() {
         return (
           <>
             <p>"Password Must Contain at least 8 letters"</p>
+            <p>"Password Must Include a Number and Special Character"</p>
           </>   
           )
       } else {
@@ -101,6 +108,7 @@ function Signin() {
           placeholder="password"
           value={password} 
           minLength="8"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*?[~`!@#$%\^&*()\-_=+[\]{};:\x27.,\x22\\|/?><]).{8,}"
           onChange={(e)=> setPassword(e.target.value)}
         />
         <input 
@@ -125,4 +133,4 @@ function Signin() {
 }
 
 // Export sign-in component
-export default Signin
+export default Signin;
