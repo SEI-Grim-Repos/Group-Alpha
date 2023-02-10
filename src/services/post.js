@@ -3,7 +3,7 @@ import api from "./apiConfig.js";
 
 export const getPosts = async () => {
     try {
-        const response = await api.get("/Post");
+        const response = await api.get("/Post/");
         return response.data;
     } catch (error) {
         throw error;
