@@ -18,3 +18,22 @@ return response.data;
     throw error;
 }
 };
+
+export const createUser = async (UserData) => {
+try{
+    const response = await api.post("/Users", UserData);
+    return response.data;
+} catch (error){
+    throw error;
+}
+};
+
+
+export const updateUser = async (id, UserData) => {
+try {
+    const response = await api.put(`/Users/${id}`, UserData);
+    return response.data;
+}catch (error){
+    throw error;
+}
+};
