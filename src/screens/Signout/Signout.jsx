@@ -131,4 +131,4 @@ function Signin() {
 }
 
 // Export sign-in component
-export default Signin
+export default Signin;
