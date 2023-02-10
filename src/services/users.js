@@ -9,3 +9,12 @@ export const getUsers = async () => {
     throw error;
 }
 };
+
+export const getUser = async (id) => {
+try {
+const response = await api.get(`/Users/${id}`);
+return response.data;
+} catch (error){
+    throw error;
+}
+};
