@@ -9,7 +9,7 @@ import "./signin.css"
 function Signin() {
   // Deconstruct useAuthContext to pull dispatch
   const { dispatch } = useAuthContext()
-  
+  const navigate = useNavigate();
   // Set useState object
   const [user, setUser] = useState({
     username: "",
