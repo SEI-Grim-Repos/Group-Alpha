@@ -9,7 +9,6 @@ import "./signin.css"
 function Signin() {
   // Deconstruct useAuthContext to pull dispatch
   const { dispatch } = useAuthContext()
-  const navigate = useNavigate();
   // Set useState object
   const [user, setUser] = useState({
     username: "",
@@ -59,7 +58,6 @@ function Signin() {
   const result = (validation) => {
     if (validation === "") {
       // Ensure reset of <p> when values are reset after submitting
-      return <p></p>
     // If the passwords match...
     } else if (validation === true) {
       // Vaidate if they meet the specified criteria and return <p> accordingly
