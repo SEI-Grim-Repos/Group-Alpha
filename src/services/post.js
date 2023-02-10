@@ -19,3 +19,12 @@ export const getPost= async (id) => {
       throw error;
     }
   };
+
+  export const createPost= async (PostData) => {
+    try {
+      const response = await api.post("/posts", PostData);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  };
