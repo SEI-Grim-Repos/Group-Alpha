@@ -15,6 +15,7 @@ class Hamburger extends React.Component {
             //     <a href="" className="menu-item"><CountryMap /></a>
             //     <a href="/sign-out"className="menu-item">Sign out</a>
             // </Menu>
+
             <div>
             <nav id="main-menu">
             <ul>
