@@ -13,9 +13,6 @@ function Signin() {
   const Navigate = useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (user.password === user.passwordConfirm) {
-      return <Navigate to="/all-posts" replace={true} />
     if (user.password == user.passwordConfirm) {
       Navigate('/all-posts')
       
