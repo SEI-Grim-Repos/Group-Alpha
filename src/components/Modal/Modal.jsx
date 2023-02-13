@@ -1,10 +1,21 @@
 import React from "react";
-import { getComments } from '../../services/comment.js'
+import { getComments, postComment } from '../../services/comment.js'
 
-function Modal({ currentPost, setModalOpen, getComments }) {    
+function Modal({ currentPost, setModalOpen }) {    
     const [comments, setComments] = React.useState([]);
+    const [newComment, setNewComment] = React.useState("");
+
     const handleClose = () => {
       setModalOpen(false);
+    };
+
+    const handleCommentChange = (event) => {
+        setNewComment(event.target.value);
+    };
+
+    const handleCommentSubmit = async (event) => {
+        //postComment will be the post request 
+        postComment(newComment)
     };
 
     function displayComments(currentValue, index){
@@ -12,12 +23,6 @@ function Modal({ currentPost, setModalOpen, getComments }) {
             <div key={index}>{currentValue.body}</div>
         );
     }
-
-    React.useEffect(() => {
-        getComments().then(comments => {
-            setComments(comments);
-        });
-    }, []);
   
     return (
         <>
@@ -26,6 +31,10 @@ function Modal({ currentPost, setModalOpen, getComments }) {
             <div>{currentPost.body}</div>
             <div>{currentPost.location}</div>
             <div>{currentPost.likes}</div>
+            <form onSubmit={handleCommentSubmit}>
+                <input type="text" value={newComment} onChange={handleCommentChange} />
+                <button type="submit">Submit</button>
+            </form>
             <div>
                 {comments.map((currentValue, index) => displayComments(currentValue, index))}
             </div>
