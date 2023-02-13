@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { getPosts } from '../../services/post.js';
 import { Modal } from '../../components/Modal/Modal.jsx'
+import Hamburger from '../../components/HamburgerMenu/Hamburger.jsx'
+// import getPosts from '../../services/post'
+// import Modal from '../../components/Post.jsx'
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -35,10 +38,17 @@ const Home = () => {
   };
 
   return (
-    <>
+    <div>
+      <Hamburger/>
+      <div className='Title'> Welcome</div>
+      {/* <div className='post'>
+        getPosts
+      </div> */}
+      
+
       {posts.map((post) => displayPosts(post))}
       {isOpen && <Modal currentPost={currentPost} setModalOpen={setIsOpen} />}
-    </>
+    </div>
   );
 };
 
