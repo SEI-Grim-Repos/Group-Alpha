@@ -16,7 +16,7 @@ function Signin() {
     e.preventDefault();
 
     if (user.password === user.passwordConfirm) {
-      return <Navigate to="/all-posts" replace={true} />
+      return <navigate to="/all-posts" replace={true} />
       
     } else {
       setUser({message:"Wrong password try again!"})
@@ -45,7 +45,7 @@ function Signin() {
       <input onChange={handleChange} id="username" value={user.username} type="text" placeholder="username" />
       <input onChange={handleChange}  id="password"value={user.password} type="password" placeholder="password" />
       <input onChange={handleChange} id="Confirm"value={user.passwordConfirm}type="password" placeholder="passwordConfirm" />
-      <button type="submit">Submit</button>
+      <button type="submit">Sign in</button>
       </form>
       {user.message}
     </div>
