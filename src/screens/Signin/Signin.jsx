@@ -1,5 +1,6 @@
 import "./Signin.css"
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Signin() {
   const [user, setUser] = useState({
@@ -14,7 +15,7 @@ function Signin() {
     e.preventDefault();
 
     if (user.password === user.passwordConfirm) {
-      setUser({message:"You Are Logged in!"})
+      return <Navigate to="/all-posts" replace={true} />
       
     } else {
       setUser({message:"Wrong password try again!"})
