@@ -14,6 +14,7 @@ function App() {
           <Route path="/" element={<Signin />} />
           <Route path="/all-posts" element={<Home />} />
           <Route path="/sign-out" element={<Signout />} />
+          <Route path="/sign-in" element={<Signin />} />
         </Routes>
     </div>
   );
