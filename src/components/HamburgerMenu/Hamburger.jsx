@@ -10,11 +10,9 @@ class Hamburger extends React.Component {
     render() {
         return(
             <Menu>
-                <a className="menu-item">Home</a>
-                <a className="menu-item">Country A</a>
-                <a className="menu-item">Country B</a>
-                <a className="menu-item">Country C</a>
-                <a className="menu-item">Country D</a>
+                <a href="/all-posts" className="menu-item">Home</a>
+                <a href="" className="menu-item">Placeholder for Country pages</a>
+                <a href="/sign-out"className="menu-item">Sign out</a>
             </Menu>
         )
     }
