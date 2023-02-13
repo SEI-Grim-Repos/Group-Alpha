@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Signin() {
-  const navigate = useNavigate();
+  const Navigate = useNavigate();
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -16,7 +16,7 @@ function Signin() {
     e.preventDefault();
 
     if (user.password === user.passwordConfirm) {
-      return <navigate to="/all-posts" replace={true} />
+      return <Navigate to="/all-posts" replace={true} />
       
     } else {
       setUser({message:"Wrong password try again!"})
@@ -40,7 +40,7 @@ function Signin() {
   }
   return (
     <div className="form">
-      <h1>Sign Up</h1>
+      <h1>Sign In</h1>
       <form onSubmit={handleSubmit}>
       <input onChange={handleChange} id="username" value={user.username} type="text" placeholder="username" />
       <input onChange={handleChange}  id="password"value={user.password} type="password" placeholder="password" />
