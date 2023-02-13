@@ -1,6 +1,5 @@
 import api from "./apiConfig.js";
 
-
 export const getComments = async () => {
     try{
     const response = await api.get('/Comment');
