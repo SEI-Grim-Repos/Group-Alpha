@@ -1,9 +1,9 @@
 import { render } from "@testing-library/react";
 
-function Signout() {
+function Signup() {
 
 
     render()
 }
 
-export default Signout;
+export default Signup;
