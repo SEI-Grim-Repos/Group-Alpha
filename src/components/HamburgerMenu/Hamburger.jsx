@@ -1,7 +1,7 @@
-import { fallDown as Menu } from 'react-burger-menu';
+//import { fallDown as Menu } from 'react-burger-menu';
 import React from 'react';
 import './Hamburger.css';
-import CountryMap from '../Countries/Countries.jsx'
+//import CountryMap from '../Countries/Countries.jsx'
 
 class Hamburger extends React.Component {
     showSettings (event) {
@@ -20,8 +20,9 @@ class Hamburger extends React.Component {
             <nav id="main-menu">
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/portfolio"><CountryMap /></a></li>
+                {/* <li><a href="/portfolio"><CountryMap /></a></li> */}
                 <li><a href="/signout">Sign Out</a></li>
+                <li><a href="/create-post">Create New Post</a></li>
             </ul>
             </nav>
 
@@ -31,13 +32,14 @@ class Hamburger extends React.Component {
                 <h3>Countries</h3>
                 <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/portfolio"><CountryMap /></a></li>
+                {/* <li><a href="/portfolio"><CountryMap /></a></li> */}
                 <li><a href="/signout">Sign Out</a></li>
+                <li><a href="/create-post">Create New Post</a></li>
                 </ul>
             </nav>
             </label>
 
-            <div class="overlay"></div>
+            <div className="overlay"></div>
             </div>
         )
     }
