@@ -1,13 +1,23 @@
-import { React } from "react";
+import React from "react";
+import { getComments } from '../../services/comment.js'
 
-function Modal({ currentPost, setModalOpen }) {    
+function Modal({ currentPost, setModalOpen, getComments }) {    
+    const [comments, setComments] = React.useState([]);
     const handleClose = () => {
       setModalOpen(false);
     };
 
-    function displayComments (currentComment){
-        <div>{currentComment}</div>
+    function displayComments(currentValue, index){
+        return (
+            <div key={index}>{currentValue.body}</div>
+        );
     }
+
+    React.useEffect(() => {
+        getComments().then(comments => {
+            setComments(comments);
+        });
+    }, []);
   
     return (
         <>
@@ -17,7 +27,7 @@ function Modal({ currentPost, setModalOpen }) {
             <div>{currentPost.location}</div>
             <div>{currentPost.likes}</div>
             <div>
-                {currentPost.comments.forEach(displayComments())}
+                {comments.map((currentValue, index) => displayComments(currentValue, index))}
             </div>
             <button onClick={handleClose}>Close</button>
         </>
@@ -25,4 +35,3 @@ function Modal({ currentPost, setModalOpen }) {
 }
 
 export { Modal }
-
