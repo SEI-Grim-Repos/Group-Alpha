@@ -18,12 +18,11 @@ function App() {
       <Hamburger />
       {/* setCountry={setCountry}/> */}
         <Routes>
-          <Route path="/" element={<Signin />} />
-          <Route path="/all-posts" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/create-post" element={<NewPost />} /><Route path="/:country" element={<Modal />
           // country={country}/>} 
   }/>
-          <Route path="/sign-up" element={<Signup />} />
+          <Route path="/sign-in" element={<Signin />} />
         </Routes>
     </div>
   );

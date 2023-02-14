@@ -2,24 +2,21 @@ import { useState, useEffect } from 'react';
 import{ getPosts } from '../../services/post.js';
 
 function CountryMap() {
-    const [ countries, setCountries ] = useState("")
+    const [ countries, setCountries ] = useState([])
 
     useEffect(() => {
-        mapThrough()
+        async function mapThrough(){
+            const response = await getPosts()
+                setCountries(response)
+        }
+         mapThrough()
     }, [])
 
-    async function mapThrough(){
-        const response = await getPosts()
-        for (let i = 0; i < response.length; i++){
-            setCountries(response[i])
-        }
-    }
+   
 
     return (
         <div>
-        <p>
-        {countries.location}
-        </p>
+       {countries.map((country) => (<p>{country.location}</p>))}
         </div>
     )
 }
