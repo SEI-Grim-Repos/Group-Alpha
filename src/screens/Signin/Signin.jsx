@@ -16,13 +16,19 @@ function Signin() {
 
     if (user.password === "") 
     
-    setUser({message:"Please Enter a valid password"}) 
+    setUser((prev) => ({
+      ...prev,
+      message:"Please Enter a valid password"
+    })) 
 
     else if (user.password === user.passwordConfirm) {
       Navigate('/')
       
     } else {
-      setUser({message:"Wrong password try again!"})
+      setUser((prev) => ({
+        ...prev,
+        message:"Wrong password try again!"
+      }))
     }
   }
 
