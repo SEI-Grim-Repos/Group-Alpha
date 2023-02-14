@@ -132,7 +132,7 @@ body {
   }
   
   
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 10000px) {
     #main-menu {
       display: none;
     }
