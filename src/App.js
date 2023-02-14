@@ -6,21 +6,19 @@ import Signin from './screens/Signin/Signin.jsx';
 import NewPost from './screens/CreatePost/CreatePost.jsx';
 import Modal from './components/Modal/Modal.jsx';
 import SignUp from './screens/Signup/Signup.jsx';
-
 function App() {
-
   return (
     <div className="App">
       <Hamburger />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/create-post" element={<NewPost />} /><Route path="/:country" element={<Modal />}/>
+          <Route path="/create-post" element={<NewPost />} />
+          <Route path="/country/:country" element={<Modal />}/>
           <Route path="/sign-in" element={<Signin />} />
-          <Route path="/sign-ip" element={<SignUp />} />
+          <Route path="/sign-up" element={<SignUp />} />
           <Route path="/create-post" element={<NewPost />} />
         </Routes>
     </div>
   );
 }
-
 export default App;
