@@ -1,4 +1,5 @@
 import { slide as Menu } from 'react-burger-menu';
+import { Link } from 'react-router-dom';
 import React from 'react';
 import './Hamburger.css';
 import CountryMap from '../CountryMap/CountryMap';
@@ -11,10 +12,10 @@ class Hamburger extends React.Component {
 render() {
         return(
             <Menu>
-                <a href="/" className="logo">GourmetGather</a>
-                <a href="/country" className="menu-item"><CountryMap /></a>
-                <a href="/create-post" className="menu-item">Create New Post</a>
-                <a href="/sign-in" className="menu-item">Sign Up and Sign In</a>
+                <Link to="/" className="logo">GourmetGather</Link>
+                <CountryMap />
+                <Link to="/create-post" className="menu-item">Create New Post</Link>
+                <Link to="/sign-in" className="menu-item">Sign Up and Sign In</Link>
                 {/* <a href="/sign-out"className="menu-item">Sign out</a> */}
             </Menu>
         )
