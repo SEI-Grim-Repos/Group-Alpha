@@ -7,3 +7,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.submitComment {
+  margin: 0 auto;
+}
