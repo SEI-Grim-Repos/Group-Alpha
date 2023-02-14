@@ -5,23 +5,17 @@ function CountryMap() {
     const [ countries, setCountries ] = useState([])
 
     useEffect(() => {
-        async function mapThrough(){
+        async function getAllCountries(){
             const response = await getPosts()
-                setCountries(response)
+            setCountries(response)
         }
-         mapThrough()
-    }, [])
+         getAllCountries()
 
-    function checkUnique(){
-        countries.filter((element, index) =>{
-            return countries.indexOf(element) === index;
-        })
-    }
-   
+    }, [])
 
     return (
         <div>
-       {countries.map.filter(checkUnique)((country) => (<p>{country.location}</p>))}
+       {countries.map((country) => (<p>{country.location}</p>))}
         </div>
     )
 }
