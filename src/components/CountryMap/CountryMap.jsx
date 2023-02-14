@@ -5,14 +5,13 @@ function CountryMap() {
     const [ countries, setCountries ] = useState([])
 
     useEffect(() => {
-        async function mapThrough(){
+        async function getAllCountries(){
             const response = await getPosts()
-                setCountries(response)
+            setCountries(response)
         }
-         mapThrough()
-    }, [])
+         getAllCountries()
 
-   
+    }, [])
 
     return (
         <div>
