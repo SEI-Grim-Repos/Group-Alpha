@@ -1,13 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
 .image {
   width: 20vw;
-  height: 20hv;
+  height: 30vh;
 }
 
 .post {
-  margin-left: 500px;
-  margin-top: 60px;
+ 
+  
   background-color: gray;
-  border: solid black;
+  border: solid white;
   width: 40vw;
   height:50vh;
   display: content;
