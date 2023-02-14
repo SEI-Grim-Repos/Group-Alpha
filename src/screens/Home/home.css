@@ -2,7 +2,6 @@
   width: 20vw;
   height: 20hv;
 }
-
 .post {
   margin-left: 30%;
   margin-top: 60px;
@@ -23,4 +22,27 @@
   color:  rgb(56, 57, 58);
   font-size: 86px;
   margin: 10%
+
+/* body {
+  margin: 0;
+  padding: 0;
+}
+
+
+.image {
+  width: 20vw;
+  height: 30vh;
+}
+
+.post {
+ 
+  
+  background-color: gray;
+  border: solid white;
+  width: 40vw;
+  height:50vh;
+  display: content;
+  flex-wrap: center;
+  justify-content: center;
+  
 }
