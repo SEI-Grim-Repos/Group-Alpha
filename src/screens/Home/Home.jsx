@@ -27,11 +27,12 @@ const Home = () => {
   const displayPosts = (currentValue) => {
     return (
       <div className="post">
-        <div> {currentValue.title} </div>
+        <h2> {currentValue.title} </h2>
         <img className="image" src={currentValue.image} />
         <div> {currentValue.likes} Likes</div>
         <div> {currentValue.category} </div>
         <div> Location: {currentValue.location} </div>
+      <br></br>
         <button onClick={() => handleClick(currentValue)}>Comment</button>
       </div>
     );
@@ -39,7 +40,7 @@ const Home = () => {
 
   return (
     <div>
-      <div className='Title'> Welcome</div>
+      <h1 className='Title'> Welcome to the Main Feed</h1>
 
       {posts.map((post) => displayPosts(post))}
       {isOpen && <Modal currentPost={currentPost} setModalOpen={setIsOpen} />}
