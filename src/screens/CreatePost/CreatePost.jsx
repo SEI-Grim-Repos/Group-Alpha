@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 function NewPost(){
     const [ post, setPost ] = useState({
-        id: "",
         user_id: "",
         image: "",
         title: "",
@@ -37,11 +36,6 @@ return (
     <div>
         <h1>Create New Post</h1>
         <form className="create-form" onSubmit={handleSubmit} style={{flexDirection: 'column'}}>
-            <input type="text"
-            placeholder="Enter ID"
-            name="id"
-            value={post.id}
-            onChange={handleChange}></input>
             <input type="text"
             placeholder="Enter User ID"
             name="user_id"
