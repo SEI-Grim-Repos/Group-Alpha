@@ -22,7 +22,7 @@ function SignUp() {
       Navigate('/sign-in')
       
     } else {
-      setUser({message:"Wrong password try again!"})
+      setUser({message:"Confirm password must be the same as password"})
     }
   }
 
