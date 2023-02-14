@@ -34,4 +34,4 @@ function Modal({ currentPost, setModalOpen, getComments }) {
     )
 }
 
-export { Modal }
+export default Modal;
