@@ -2,6 +2,7 @@ import {useState, useEffect} from "react";
 import { getComments, createComment } from '../../services/comment.js'
 import { deletePost } from "../../services/post.js";
 import { Link, useNavigate } from "react-router-dom";
+import * as BiIcons from "react-icons/bi";
 
 function Modal({ currentPost, setModalOpen }) {    
     const [comments, setComments] = useState([]);
@@ -50,6 +51,13 @@ function Modal({ currentPost, setModalOpen }) {
                 {comments.map((currentValue, index) => displayComments(currentValue, index))}
             </div>
             <button onClick={handleClose}>Close</button>
+            <div className='delete'>
+                <BiIcons.BiTrash
+                    id="trash"
+                    className="icon"
+                    onClick={() => handleDelete(currentPost._id)}
+                />
+            </div>
         </>
     )
 }
