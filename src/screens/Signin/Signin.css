@@ -5,7 +5,7 @@ body {
   font-family: sans-serif;
   background-size: 50%;
 } 
-.itle { 
+.title { 
   color: Black;
 }
 
@@ -23,36 +23,41 @@ body {
   background-position: center;
   /* display: content; */
   /* flex-wrap: center; */
-  /* justify-content: center; */
+  justify-content: center;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
+ /* .form form {
+  justify-content: center;
+ } */
 
 input {
   display: block;
   display: flex;
   justify-content:center;
-  margin-top: 15vh;
-  margin-bottom: 1vh;
-  margin-left: 33%; 
+  margin-bottom: 20px;
+  
+  /* margin-left: 33%;  */
+  background-color: aqua;
 }
 
-input[type="text"], input[type="password"] {
-  width: 200px;
-  text-align: center;
+#SignIn, #SignUp {
+  background-color: aqua;
 }
 
-/* .form {
+ .form {
   margin-bottom: 900px;
-} */
+} 
 
-.button1 {
+.button1  {
 
-  /* margin-top: 10%;
-  margin-left: 20px; */
+   margin-top: 10%;
+  margin-left: 20px; 
 } 
 
 .button2 {
-  /* margin-right: 200px;
-  margin-top: 20px; */
-}
+   margin-right: 200px;
+  margin-top: 20px; 
+} 

@@ -52,13 +52,13 @@ function Signin() {
 
   return (
     <div>
-      <h1 className="title">Sign In</h1>
+      <h2 className="title">Sign In</h2>
     <div className="form">
       <form onSubmit={handleSubmit}>
       <input onChange={handleChange} id="username" value={user.username} type="text" placeholder="username" />
       <input onChange={handleChange}  id="password"value={user.password} type="password" placeholder="password" />
-      <button type="submit">Sign In</button>
-      <button type="submit" onClick={HandleSignUp}>Sign Up</button>
+      <button id="SignIn"type="submit">Sign In</button>
+      <button id="SignUp"type="submit" onClick={HandleSignUp}>Sign Up</button>
       </form>
       {user.message}
     </div>
