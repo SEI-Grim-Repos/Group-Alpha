@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getPosts } from '../../services/post.js';
-import { Modal } from '../../components/Modal/Modal.jsx'
-import './home.css'
+import  Modal from '../../components/Modal/Modal.jsx'
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
