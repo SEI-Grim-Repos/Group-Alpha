@@ -29,7 +29,7 @@ function Modal({ currentPost, setModalOpen }) {
         );
     }
 
-    async function handleDelete(id) {
+    async function handleDelete (id) {
         await deletePost(id);
         alert("Post deleted");
         navigate("/all-posts", { replace: true });
@@ -51,11 +51,14 @@ function Modal({ currentPost, setModalOpen }) {
                 {comments.map((currentValue, index) => displayComments(currentValue, index))}
             </div>
             <button onClick={handleClose}>Close</button>
+
+
             <div className='delete'>
+                {/* <button onClick={() => handleDelete (currentPost._id)}> Delete Button </button> */}
                 <BiIcons.BiTrash
                     id="trash"
                     className="icon"
-                    onClick={() => handleDelete(currentPost._id)}
+                    onClick={() => handleDelete (currentPost._id)}
                 />
             </div>
         </>
