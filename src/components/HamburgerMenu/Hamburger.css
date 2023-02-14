@@ -1,7 +1,5 @@
-.menu-item {
-    color: white;
-    font-size: 2em;
-    font-family: 'Montserrat', sans-serif;
+.menu-item{
+  color: white;
 }
 
 body {
@@ -134,7 +132,7 @@ body {
   }
   
   
-  @media screen and (max-width: 10000px) {
+  @media screen and (max-width: 750px) {
     #main-menu {
       display: none;
     }

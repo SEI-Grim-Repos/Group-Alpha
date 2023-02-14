@@ -2,6 +2,7 @@ import "./Signin.css"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 function Signin() {
   const [user, setUser] = useState({
     username: "",
@@ -48,8 +49,8 @@ function Signin() {
       <input onChange={handleChange} id="username" value={user.username} type="text" placeholder="username" />
       <input onChange={handleChange}  id="password"value={user.password} type="password" placeholder="password" />
       <input onChange={handleChange} id="Confirm"value={user.passwordConfirm}type="password" placeholder="passwordConfirm" />
-      <button type="submit">Sign Up</button>
-      <button type="submit">Sign in</button>
+      <button className= "button2" type="submit">Sign in</button>
+      <button className= "button1" type="submit">Sign Up</button>
       </form>
       {user.message}
     </div>

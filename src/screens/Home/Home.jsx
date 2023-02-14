@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getPosts } from '../../services/post.js';
-import { Modal } from '../../components/Modal/Modal.jsx'
-
+import Modal from '../../components/Modal/Modal.jsx'
+import "./home.css"
 const Home = () => {
   const [posts, setPosts] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -23,14 +23,14 @@ const Home = () => {
 
   const displayPosts = (currentValue) => {
     return (
-      <>
+      <div className="post">
         <div> {currentValue.title} </div>
-        <img src={currentValue.image} />
-        <div> {currentValue.likes} </div>
+        <img className="image" src={currentValue.image} />
+        <div> {currentValue.likes} Likes</div>
         <div> {currentValue.category} </div>
         <div> {currentValue.location} </div>
-        <button onClick={() => handleClick(currentValue)} />
-      </>
+        <button onClick={() => handleClick(currentValue)}>x</button>
+      </div>
     );
   };
 
