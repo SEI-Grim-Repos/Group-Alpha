@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { getPosts } from '../../services/post.js';
 import Modal from '../../components/Modal/Modal.jsx'
 import "./home.css"
+import Hamburger from '../../components/HamburgerMenu/Hamburger.jsx'
+
 const Home = () => {
   const [posts, setPosts] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +11,9 @@ const Home = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const posts = await getPosts();
+      let posts = await getPosts();
+      //this reverses the order of objects in the posts array(should render them newest to oldest now)
+      posts = posts.reverse(); 
       setPosts(posts);
     };
 
@@ -35,10 +39,13 @@ const Home = () => {
   };
 
   return (
-    <>
+    <div>
+      <Hamburger/>
+      <div className='Title'> Welcome</div>
+
       {posts.map((post) => displayPosts(post))}
       {isOpen && <Modal currentPost={currentPost} setModalOpen={setIsOpen} />}
-    </>
+    </div>
   );
 };
 
