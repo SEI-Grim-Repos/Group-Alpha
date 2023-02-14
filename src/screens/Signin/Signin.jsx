@@ -51,8 +51,9 @@ function Signin() {
   }
 
   return (
+    <div>
+      <h1 className="title">Sign In</h1>
     <div className="form">
-      <h1>Sign In</h1>
       <form onSubmit={handleSubmit}>
       <input onChange={handleChange} id="username" value={user.username} type="text" placeholder="username" />
       <input onChange={handleChange}  id="password"value={user.password} type="password" placeholder="password" />
@@ -60,6 +61,7 @@ function Signin() {
       <button type="submit" onClick={HandleSignUp}>Sign Up</button>
       </form>
       {user.message}
+    </div>
     </div>
   )
 }
