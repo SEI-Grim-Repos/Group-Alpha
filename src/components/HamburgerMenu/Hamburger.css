@@ -1,145 +1,73 @@
-.menu-item {
-    color: white;
-    font-size: 2em;
-    font-family: 'Montserrat', sans-serif;
+.menu-item{
+  color: white;
 }
 
-body {
-    padding: 0px;
-    margin: 0px;
-    font-size: 20px;
-    min-height: 200vh;
-    font-family: 'Cabin', Sans-serif;
-  }
-  
-  .overlay{
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity .35s, visibility .35s, height .35s;
-      overflow: hidden;
-      background: black;
-      z-index: -1;
-  }
-  
-  #main-menu {
-    display: block;
-    height: 50px;
-    width: 100%;
-    background: #3D0E61;
-    margin: 0px;  
-    z-index: 9;
-  }
-  
-  #main-menu ul {
-    max-width: 800px;
-    width: 100%;
-    height: 100%;
-    margin: 0px auto;
-    padding: 0px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    z-index: 9;
-  }
-  
-  #main-menu li {
-    list-style-type: none;
-    font-size: 2rem;
-  }
-  
-  #main-menu a {
-    color: #B9FAF8;
-    font-size: 1.5rem;
-    text-decoration: none;
-  }
-  
-  #main-menu a:hover {
-    text-decoration: underline;
-  }
-  
-  #hamburger-input{
-    display: none;
-  }
-  
-  #hamburger-menu {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      width: 50px;
-      height: 50px;
-      display: none;
-      border: none;
-      padding: 0px;
-      margin: 0px;
-      font-family: 'Cabin', Sans-serif;
-      background: linear-gradient(
-        to bottom, 
-        #3D0E61, #3D0E61 20%, 
-        white 20%, white 40%, 
-        #3D0E61 40%, #3D0E61 60%, 
-        white 60%, white 80%, 
-        #3D0E61 80%, #3D0E61 100%
-      );
-  }
-  
-  #hamburger-menu #sidebar-menu {
-      visibility: hidden;
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 200px;
-      height: 100%;
-      background-color: #3D0E61;
-      transition: 0.3s;
-      padding: 0px 10px;
-      box-sizing: border-box;
-  }
-  
-  #hamburger-menu h3 {
-    color: #B9FAF8;
-    font-size: 2.2rem;
-  }
-  
-  #hamburger-menu ul {
-    padding-left: 0px;
-  }
-  
-  #hamburger-menu li {
-    list-style-type: none;
-    line-height: 3rem;
-  }
-  
-  #hamburger-menu a {
-    color: #B9FAF8;
-    font-size: 1.3rem;
-    text-decoration: none;
-  }
-  
-  #hamburger-menu a:hover {
-    text-decoration: underline;
-  }
-  
-  #hamburger-input:checked + #hamburger-menu #sidebar-menu {
-      visibility: visible;
-      left: 0;
-  }
-  #hamburger-input:checked ~ .overlay{
-     visibility: visible;
-    opacity: 0.4;
-  }
-  
-  
-  @media screen and (max-width: 750px) {
-    #main-menu {
-      display: none;
-    }
-    #hamburger-menu {
-      display: inline;
-    }
-  }
-  
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #a90000;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  top: 0px;
+  left: 0px;
+}

@@ -43,4 +43,4 @@ function Modal({ currentPost, setModalOpen }) {
     )
 }
 
-export { Modal }
+export default Modal;
