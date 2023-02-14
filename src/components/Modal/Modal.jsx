@@ -1,5 +1,5 @@
 import React from "react";
-import { getComments, createComment } from '../../services/comment.js'
+import { getComments, postComment } from '../../services/comment.js'
 
 function Modal({ currentPost, setModalOpen }) {    
     const [comments, setComments] = React.useState([]);
@@ -15,7 +15,7 @@ function Modal({ currentPost, setModalOpen }) {
 
     const handleCommentSubmit = async (event) => {
         //postComment will be the post request 
-        createComment(newComment)
+        postComment(newComment)
     };
 
     function displayComments(currentValue, index){
