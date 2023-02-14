@@ -6,8 +6,8 @@
   color: white;
   background-color: rgb(56, 57, 58);
   border: solid black;
-  max-width: 40vw;
-  height:50vh;
+  max-width: 60vw;
+  max-height:80vh;
   display: content;
   flex-wrap: center;
   justify-content: center;
