@@ -43,8 +43,4 @@ function Modal({ currentPost, setModalOpen }) {
     )
 }
 
-<<<<<<< HEAD
 export default Modal;
-=======
-export { Modal }
->>>>>>> 22dda8d1c6301ddb66f4ab50b0935aab47528dc9
