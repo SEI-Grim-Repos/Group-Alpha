@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 function Signin() {
   const [user, setUser] = useState({
     username: "",
-    password: "",
-    passwordConfirm: "",
+    password: null,
+    passwordConfirm: null,
     valid: true,
     message: ""
   });
