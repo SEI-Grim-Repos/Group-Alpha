@@ -1,0 +1,17 @@
+.image {
+  width: 20vw;
+  height: 20hv;
+}
+
+.post {
+  margin-left: 500px;
+  margin-top: 60px;
+  background-color: gray;
+  border: solid black;
+  width: 40vw;
+  height:50vh;
+  display: content;
+  flex-wrap: center;
+  justify-content: center;
+  
+}
