@@ -42,3 +42,45 @@ const isCorrectRefreshError = (status) => {
     return status === 401;
   }
   
+
+  const authRequest = axios.create({
+    baseURL: BASE_URL,
+    timeout: 5000,
+    headers: {
+      'Authorization': `Bearer ${window.localStorage.getItem(ACCESS_TOKEN)}`,
+      'Content-Type': 'application/json',
+    }
+});
+authRequest.interceptors.response.use(
+  (response) => response, 
+  (error) => { 
+    return errorInterceptor(error)
+  }
+);
+
+const errorInterceptor = (error) => {
+  const originalRequest = error.config;
+  const status = error.response.status;
+  if (isCorrectRefreshError(status)) {
+    return refreshToken().then((data)=> {
+      const headerAuthorization = `Bearer ${window.localStorage.getItem(ACCESS_TOKEN)}`;
+      authRequest.defaults.headers['Authorization'] = headerAuthorization;
+      originalRequest.headers['Authorization'] = headerAuthorization;
+      return authRequest(originalRequest)
+    }).catch((error)=> {
+
+      logoutUser();
+      return Promise.reject(error)
+    })
+  }
+  return Promise.reject(error)
+}
+
+const logoutUser = () => {
+  window.localStorage.removeItem(ACCESS_TOKEN);
+  window.localStorage.removeItem(REFRESH_TOKEN);
+  authRequest.defaults.headers['Authorization'] = "";
+}
+
+export { tokenRequest, loginUser, logoutUser, refreshToken, authRequest,
+         errorInterceptor, BASE_URL, ACCESS_TOKEN, REFRESH_TOKEN }
