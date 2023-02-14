@@ -14,7 +14,7 @@ let tokenRequest = axios.create({
     }
 })
 
-const logainUser = (username, password) => {
+const loginUser = (username, password) => {
     const loginBody = {username: username, password: password}
 
     return tokenRequest.post(`/api/token/both/`, loginBody)
@@ -82,5 +82,5 @@ const logoutUser = () => {
   authRequest.defaults.headers['Authorization'] = "";
 }
 
-export { tokenRequest, loginUser, logoutUser, refreshToken, authRequest,
+export { tokenRequest, logainUser , logoutUser, refreshToken, authRequest,
          errorInterceptor, BASE_URL, ACCESS_TOKEN, REFRESH_TOKEN }

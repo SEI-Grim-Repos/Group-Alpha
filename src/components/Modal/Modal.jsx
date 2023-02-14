@@ -6,8 +6,8 @@ import * as BiIcons from "react-icons/bi";
 import './Modal.css';
 
 function Modal({ currentPost, setModalOpen }) {    
-    const [comments, setComments] = React.useState([]);
-    const [newComment, setNewComment] = React.useState("");
+    const [comments, setComments] = useState([]);
+    const [newComment, setNewComment] = useState("");
 
     const handleClose = () => {
       setModalOpen(false);
