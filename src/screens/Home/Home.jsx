@@ -32,7 +32,7 @@ const Home = () => {
         <div> {currentValue.likes} </div>
         <div> {currentValue.category} </div>
         <div> {currentValue.location} </div>
-        <button onClick={() => handleClick(currentValue)} />
+        <button onClick={() => handleClick(currentValue)}>View Details</button>
       </>
     );
   };
@@ -41,10 +41,6 @@ const Home = () => {
     <div>
       <Hamburger/>
       <div className='Title'> Welcome</div>
-      {/* <div className='post'>
-        getPosts
-      </div> */}
-      
 
       {posts.map((post) => displayPosts(post))}
       {isOpen && <Modal currentPost={currentPost} setModalOpen={setIsOpen} />}
