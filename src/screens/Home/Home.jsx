@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getPosts } from '../../services/post.js';
 import Modal from '../../components/Modal/Modal.jsx'
+import './home.css'
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -28,8 +29,8 @@ const Home = () => {
         <img className="image" src={currentValue.image} />
         <div> {currentValue.likes} Likes</div>
         <div> {currentValue.category} </div>
-        <div> {currentValue.location} </div>
-        <button onClick={() => handleClick(currentValue)}>x</button>
+        <div> Location: {currentValue.location} </div>
+        <button onClick={() => handleClick(currentValue)}>Comment</button>
       </div>
     );
   };
