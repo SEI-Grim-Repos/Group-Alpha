@@ -23,6 +23,7 @@ function App() {
           // country={country}/>} 
   }/>
           <Route path="/sign-in" element={<Signin />} />
+          <Route path="/sign-up" element={<Signup />} />
         </Routes>
     </div>
   );
