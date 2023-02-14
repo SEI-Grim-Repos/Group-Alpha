@@ -27,7 +27,7 @@ const Home = () => {
 
   const displayPosts = (currentValue) => {
     return (
-      <div className="post">
+      <div className="post" >
         <div> {currentValue.title} </div>
         <img className="image" src={currentValue.image} />
         <div> {currentValue.likes} Likes</div>
