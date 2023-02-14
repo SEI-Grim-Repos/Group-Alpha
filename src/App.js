@@ -16,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/create-post" element={<NewPost />} /><Route path="/:country" element={<Modal />}/>
           <Route path="/sign-in" element={<Signin />} />
+          <Route path="/sign-up" element={<Signup />} />
         </Routes>
     </div>
   );
