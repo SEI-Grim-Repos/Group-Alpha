@@ -11,7 +11,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const posts = await getPosts();
+      let posts = await getPosts();
       //this reverses the order of objects in the posts array(should render them newest to oldest now)
       posts = posts.reverse(); 
       setPosts(posts);
@@ -41,7 +41,9 @@ const Home = () => {
   return (
     <div>
       <Hamburger/>
-      <div className='Title'> Welcome</div>
+      <div className='Title'>
+        <h1>NewsFeed</h1>
+        </div>
 
       {posts.map((post) => displayPosts(post))}
       {isOpen && <Modal currentPost={currentPost} setModalOpen={setIsOpen} />}
