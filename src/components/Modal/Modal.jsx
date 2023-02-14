@@ -37,7 +37,7 @@ function Modal({ currentPost, setModalOpen }) {
       }
   
     return (
-        <>
+        <div className='modal-content'>
             <img src={currentPost.image}/>
             <div>{currentPost.title}</div>
             <div>{currentPost.body}</div>
@@ -61,8 +61,8 @@ function Modal({ currentPost, setModalOpen }) {
                     onClick={() => handleDelete (currentPost._id)}
                 />
             </div>
-        </>
-    )
+        </div>
+    );
 }
 
 export default Modal;
