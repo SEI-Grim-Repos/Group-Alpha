@@ -23,26 +23,10 @@
   font-size: 86px;
   margin: 10%
 
-/* body {
+}
+
+.body {
+  background: rgb( 204, 204, 204);
   margin: 0;
   padding: 0;
-}
-
-
-.image {
-  width: 20vw;
-  height: 30vh;
-}
-
-.post {
- 
-  
-  background-color: gray;
-  border: solid white;
-  width: 40vw;
-  height:50vh;
-  display: content;
-  flex-wrap: center;
-  justify-content: center;
-  
 }

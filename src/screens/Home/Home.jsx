@@ -39,7 +39,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className="body">
       <Hamburger/>
       <div className='Title'>
         <h1>NewsFeed</h1>
