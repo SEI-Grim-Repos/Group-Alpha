@@ -40,7 +40,7 @@ const Home = () => {
   };
 
   return (
-    <div className="body">
+    <div className="body"imagesrc="/screens/Home/farm animals.webp" >
       <Hamburger/>
       <div className='Title'>
         <h1>FoodFeed</h1>

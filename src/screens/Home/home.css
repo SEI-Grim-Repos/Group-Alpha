@@ -18,12 +18,20 @@
   background-position-x: center;
 }
 
-.title {
+.Title {
   display: flex;
   justify-content: center;
-  color:  rgb(56, 57, 58);
-  font-size: 86px;
-  margin: 10%
+  color:  rgb(56, 58, 58);
+  font-size: 20px;
+
+text-shadow: 2px 2px red;
+}
+
+body{
+  background-color: aqua;
+  background-image: url("../../../Barb.png");
+  background-repeat: no-repeat;
+  
 }
 
 
