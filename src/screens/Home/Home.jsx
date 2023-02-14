@@ -40,7 +40,10 @@ const Home = () => {
 
   return (
     <div>
-      <h1 className='Title'> Welcome to the Main Feed</h1>
+      <Hamburger/>
+      <div className='Title'>
+        <h1>NewsFeed</h1>
+        </div>
 
       {posts.map((post) => displayPosts(post))}
       {isOpen && <Modal currentPost={currentPost} setModalOpen={setIsOpen} />}

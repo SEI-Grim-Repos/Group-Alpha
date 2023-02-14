@@ -1,5 +1,9 @@
-import React from "react";
-import { getComments, createComment} from '../../services/comment.js'
+import {useState, useEffect} from "react";
+import { getComments, createComment } from '../../services/comment.js'
+import { deletePost } from "../../services/post.js";
+import { useNavigate } from "react-router-dom";
+import * as BiIcons from "react-icons/bi";
+import './Modal.css';
 
 function Modal({ currentPost, setModalOpen }) {    
     const [comments, setComments] = React.useState([]);
@@ -18,29 +22,52 @@ function Modal({ currentPost, setModalOpen }) {
         createComment(newComment)
     };
 
-    function displayComments(currentValue, index){
-        return (
-            <div key={index}>{currentValue.body}</div>
-        );
-    }
+    let navigate = useNavigate();
+
+    useEffect(() => {
+        async function displayComments() {
+            let response = await getComments()
+            setComments(response)
+        }
+         displayComments()
+
+    }, [])
+
+
+    async function handleDelete (id) {
+        await deletePost(id);
+        alert("Post deleted");
+        navigate("/all-posts", { replace: true });
+        window.location.reload();
+      }
   
     return (
-        <>
+        <div className="modal">
+        <div className='modal-content'>
             <img src={currentPost.image}/>
             <div>{currentPost.title}</div>
             <div>{currentPost.body}</div>
-            <div>{currentPost.location}</div>
-            <div>{currentPost.likes}</div>
+            <div>Location: {currentPost.location}</div>
+            <div>Likes: {currentPost.likes}</div>
             <form onSubmit={handleCommentSubmit}>
                 <input type="text" value={newComment} onChange={handleCommentChange} />
-                <button type="submit">Submit</button>
+                <button type="submit">Submit Comment</button>
             </form>
-            <div>
-                {comments.map((currentValue, index) => displayComments(currentValue, index))}
+       {comments.map((comments) => (<p>{comments}</p>))}
+            <button className="closeButton" onClick={handleClose}>X</button>
+
+
+            <div className='delete'>
+                {/* <button onClick={() => handleDelete (currentPost._id)}> Delete Button </button> */}
+                <BiIcons.BiTrash
+                    id="trash"
+                    className="icon"
+                    onClick={() => handleDelete (currentPost._id)}
+                />
             </div>
-            <button onClick={handleClose}>Close</button>
-        </>
-    )
+        </div>
+        </div>
+    );
 }
 
 export default Modal;
