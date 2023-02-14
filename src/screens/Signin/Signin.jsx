@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 function Signin() {
   const [user, setUser] = useState({
     username: "",
-    password: null,
-    passwordConfirm: null,
+    password: "",
+    passwordConfirm: "",
     valid: true,
     message: ""
   });
@@ -14,7 +14,7 @@ function Signin() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (user.password === "") 
+    if (user.password ==="") 
     
     setUser({message:"Please Enter a valid password"}) 
 
