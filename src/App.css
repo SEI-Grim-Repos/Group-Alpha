@@ -1,4 +1,8 @@
 .App {
   text-align: center;
-  background-color: rgb(270, 270, 270);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

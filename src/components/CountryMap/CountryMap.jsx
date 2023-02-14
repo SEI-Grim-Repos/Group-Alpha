@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import{ getPosts } from '../../services/post.js';
+import { Link } from "react-router-dom"
 
 function CountryMap() {
     const [ countries, setCountries ] = useState([])
@@ -15,7 +16,11 @@ function CountryMap() {
 
     return (
         <div>
-       {countries.map((country) => (<p>{country.location}</p>))}
+       {countries.map((country) => (
+        <Link to={`/country/${country.location}`}>
+            <p>{country.location}</p>
+        </Link>
+        ))}
         </div>
     )
 }
