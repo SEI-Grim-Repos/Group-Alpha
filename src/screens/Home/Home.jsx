@@ -41,7 +41,9 @@ const Home = () => {
   return (
     <div>
       <Hamburger/>
-      <div className='Title'> Welcome</div>
+      <div className='Title'>
+        <h1>NewsFeed</h1>
+        </div>
 
       {posts.map((post) => displayPosts(post))}
       {isOpen && <Modal currentPost={currentPost} setModalOpen={setIsOpen} />}

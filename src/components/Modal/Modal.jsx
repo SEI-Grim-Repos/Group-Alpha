@@ -1,8 +1,9 @@
 import {useState, useEffect} from "react";
 import { getComments, createComment } from '../../services/comment.js'
 import { deletePost } from "../../services/post.js";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as BiIcons from "react-icons/bi";
+import './Modal.css';
 
 function Modal({ currentPost, setModalOpen }) {    
     const [comments, setComments] = useState([]);
@@ -23,11 +24,15 @@ function Modal({ currentPost, setModalOpen }) {
 
     let navigate = useNavigate();
 
-    function displayComments(currentValue, index){
-        return (
-            <div key={index}>{currentValue.body}</div>
-        );
-    }
+    useEffect(() => {
+        async function displayComments() {
+            let response = await getComments()
+            setComments(response)
+        }
+         displayComments()
+
+    }, [])
+
 
     async function handleDelete (id) {
         await deletePost(id);
@@ -37,20 +42,20 @@ function Modal({ currentPost, setModalOpen }) {
       }
   
     return (
+        <div className="modal">
         <div className='modal-content'>
             <img src={currentPost.image}/>
             <div>{currentPost.title}</div>
             <div>{currentPost.body}</div>
-            <div>{currentPost.location}</div>
-            <div>{currentPost.likes}</div>
+            <div>Location: {currentPost.location}</div>
+            <div>Likes: {currentPost.likes}</div>
             <form onSubmit={handleCommentSubmit}>
                 <input type="text" value={newComment} onChange={handleCommentChange} />
-                <button type="submit">Submit</button>
+                <button type="submit">Submit Comment</button>
             </form>
-            <div>
-                {comments.map((currentValue, index) => displayComments(currentValue, index))}
-            </div>
-            <button onClick={handleClose}>Close</button>
+
+       {comments.map((comments) => (<p>{comments}</p>))}
+            <button className="closeButton" onClick={handleClose}>X</button>
 
 
             <div className='delete'>
@@ -61,6 +66,7 @@ function Modal({ currentPost, setModalOpen }) {
                     onClick={() => handleDelete (currentPost._id)}
                 />
             </div>
+        </div>
         </div>
     );
 }
