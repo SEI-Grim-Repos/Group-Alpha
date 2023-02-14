@@ -12,11 +12,16 @@ function CountryMap() {
          mapThrough()
     }, [])
 
+    function checkUnique(){
+        countries.filter((element, index) =>{
+            return countries.indexOf(element) === index;
+        })
+    }
    
 
     return (
         <div>
-       {countries.map((country) => (<p>{country.location}</p>))}
+       {countries.map.filter(checkUnique)((country) => (<p>{country.location}</p>))}
         </div>
     )
 }
