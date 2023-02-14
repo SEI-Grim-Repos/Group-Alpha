@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { getPosts } from '../../services/post.js';
 import Modal from '../../components/Modal/Modal.jsx'
 import "./home.css"
-import Hamburger from '../../components/HamburgerMenu/Hamburger.jsx'
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -27,19 +26,20 @@ const Home = () => {
 
   const displayPosts = (currentValue) => {
     return (
-      <div className="post" >
-        <div> {currentValue.title} </div>
+      <div className="post">
+        <h2> {currentValue.title} </h2>
         <img className="image" src={currentValue.image} />
         <div> {currentValue.likes} Likes</div>
         <div> {currentValue.category} </div>
-        <div> {currentValue.location} </div>
-        <button onClick={() => handleClick(currentValue)}>x</button>
+        <div> Location: {currentValue.location} </div>
+      <br></br>
+        <button onClick={() => handleClick(currentValue)}>Comment</button>
       </div>
     );
   };
 
   return (
-    <div>
+    <div className="body">
       <Hamburger/>
       <div className='Title'>
         <h1>NewsFeed</h1>

@@ -6,8 +6,8 @@ import * as BiIcons from "react-icons/bi";
 import './Modal.css';
 
 function Modal({ currentPost, setModalOpen }) {    
-    const [comments, setComments] = useState([]);
-    const [newComment, setNewComment] = useState("");
+    const [comments, setComments] = React.useState([]);
+    const [newComment, setNewComment] = React.useState("");
 
     const handleClose = () => {
       setModalOpen(false);
@@ -53,7 +53,6 @@ function Modal({ currentPost, setModalOpen }) {
                 <input type="text" value={newComment} onChange={handleCommentChange} />
                 <button type="submit">Submit Comment</button>
             </form>
-
        {comments.map((comments) => (<p>{comments}</p>))}
             <button className="closeButton" onClick={handleClose}>X</button>
 
