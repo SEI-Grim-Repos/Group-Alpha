@@ -34,7 +34,7 @@ const Home = () => {
         <div> {currentValue.category} </div>
         <div> Location: {currentValue.location} </div>
       <br></br>
-        <button onClick={() => handleClick(currentValue)}>Comment</button>
+        <button className='createComment' onClick={() => handleClick(currentValue)}>Comment</button>
       </div>
     );
   };

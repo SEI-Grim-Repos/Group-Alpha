@@ -3,7 +3,6 @@
   height: 20hv;
 }
 .post {
- 
   margin-top: 60px;
   color: white;
   background-color: rgb(56, 57, 58);
@@ -41,14 +40,11 @@ body{
 /* body {
   margin: 0;
   padding: 0;
-}
-
-
+} 
 .image {
   width: 20vw;
   height: 30vh;
 }
-
 .post {
  
   
@@ -60,5 +56,4 @@ body{
   flex-wrap: center;
   justify-content: center;
   
-}
-*/
+} */
