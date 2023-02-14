@@ -15,6 +15,7 @@
   left: 50%;
   top: 25%;
   margin-left: -250px;
+  overflow: hidden;
 }
 
 .closeButton {
@@ -26,7 +27,7 @@
 }
 
 img {
-  width: 20vw;
-  height: 20hv;
+  width: 100%;
+  object-fit: contain;
 }
 

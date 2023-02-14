@@ -1,13 +1,12 @@
 .image {
-  width: 20vw;
-  height: 20hv;
+  width: 95%;
 }
 .post {
   margin-top: 60px;
   color: white;
   background-color: rgb(56, 57, 58);
   border: solid black;
-  width: 40vw;
+  max-width: 40vw;
   height:50vh;
   display: content;
   flex-wrap: center;
