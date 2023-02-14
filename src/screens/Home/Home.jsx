@@ -43,7 +43,7 @@ const Home = () => {
     <div className="body">
       <Hamburger/>
       <div className='Title'>
-        <h1>NewsFeed</h1>
+        <h1>FoodFeed</h1>
         </div>
 
       {posts.map((post) => displayPosts(post))}
