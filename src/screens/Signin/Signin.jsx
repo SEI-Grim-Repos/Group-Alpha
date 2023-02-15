@@ -52,7 +52,7 @@ function Signin() {
 
   return (
     <div className="DADdiv">
-      <h2 className="title">Sign In</h2>
+      <h2 className="title3">Sign In</h2>
     <div className="form23">
       <form onSubmit={handleSubmit}>
       <input onChange={handleChange} id="username" value={user.username} type="text" placeholder="username" />
