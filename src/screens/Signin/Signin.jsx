@@ -52,10 +52,10 @@ function Signin() {
 
   return (
     <div className="DADdiv">
-      <h2 className="title3">Sign In</h2>
+      <h1 className="title3">Sign In</h1>
     <div className="form23">
       <form onSubmit={handleSubmit}>
-      <input onChange={handleChange} id="username" value={user.username} type="text" placeholder="username" />
+      <input onChange={handleChange} id="username"value={user.username} type="text" placeholder="username" />
       <input onChange={handleChange}  id="password"value={user.password} type="password" placeholder="password" />
       <div className="FatherButton">
       <button className="ChildButton" type="submit">Sign In</button>
