@@ -50,16 +50,19 @@ function SignUp() {
   }
 
   return (
+    <div className="MamaDiv">
+      <h1 className="title4">Sign Up</h1>
     <div className="form2">
-      <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
       <input onChange={handleChange} id="username" value={user.username} type="text" placeholder="username" />
       <input onChange={handleChange}  id="password"value={user.password} type="password" placeholder="password" />
       <input onChange={handleChange} id="Confirm"value={user.passwordConfirm}type="password" placeholder="passwordConfirm" />
+      <div></div>
       <button onClick={() => Navigate('/sign-in')} type="submit">Back</button>
       <button type="submit">Sign Up</button>
       </form>
       {user.message}
+      </div>
     </div>
   )
 }
