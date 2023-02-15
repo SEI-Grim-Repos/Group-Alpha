@@ -69,3 +69,7 @@ width: 100px;
   /* background-size: 50%; */
   align-items: center;
 }
+.UsrMessage {
+  font-size: 15px;
+  color: black;
+}

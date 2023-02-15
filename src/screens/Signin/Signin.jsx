@@ -62,7 +62,9 @@ function Signin() {
       <button className="ChildButton" type="submit" onClick={HandleSignUp}>Sign Up</button>
       </div>
       </form>
+      <div className="UsrMessage">
       {user.message}
+      </div>
     </div>
     </div>
   )
