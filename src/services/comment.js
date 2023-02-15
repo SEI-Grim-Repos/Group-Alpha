@@ -2,7 +2,7 @@ import api from "./apiConfig.js";
 
 export const getComments = async () => {
     try{
-    const response = await api.get('/Comment');
+    const response = await api.get('/Comment/');
     return response.data;
 } catch (error) {
     throw error;
@@ -20,7 +20,7 @@ return response.data;
 
 export const createComment = async (CommentData) => {
 try{
-    const response = await api.post("/Comment", CommentData);
+    const response = await api.post("/Comment/", CommentData);
     return response.data;
 } catch (error){
     throw error;
