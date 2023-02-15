@@ -13,8 +13,8 @@ render() {
         return(
             <Menu>
                 <Link to="/" className="logo">GourmetGather</Link>
-                <CountryMap />
-                <Link to="/sign-in" className="menu-item">Sign Up and Sign In</Link>
+                <div className="countryMap"><CountryMap /></div>
+                <Link to="/sign-in" className="menu-item">Sign In</Link>
                 {/* <a href="/sign-out"className="menu-item">Sign out</a> */}
             </Menu>
         )
