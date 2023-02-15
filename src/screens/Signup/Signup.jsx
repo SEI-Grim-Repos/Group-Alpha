@@ -50,7 +50,7 @@ function SignUp() {
   }
 
   return (
-    <div className="form">
+    <div className="form2">
       <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
       <input onChange={handleChange} id="username" value={user.username} type="text" placeholder="username" />

@@ -6,38 +6,43 @@
   margin-top: 60px;
   color: white;
   background-color: rgb(56, 57, 58);
-  border: solid rgb(206, 20, 20);
-  width: 40vw;
-  height:50vh;
-
+  border: solid black;
+  max-width: 60vw;
+  max-height:80vh;
   display: content;
   flex-wrap: center;
   justify-content: center;
   border-radius: 10px;
-
-  background-position: center;
-  background-position-x: center;
-
+  margin: 10% auto;
+  padding: 10px
 }
 
 .Title {
   display: flex;
   justify-content: center;
-
-  color:  rgb(56, 58, 58);
-  font-size: 20px;
-
-text-shadow: 2px 2px red;
+  color:  rgb(56, 57, 58);
+  font-size: 86px;
+  margin-bottom: 10%;
 }
 
-body{
-  background-color: aqua;
-  background-image: url("../../../Barb.png");
-  background-repeat: no-repeat;
-  
-
+h1 {
+  margin-top: 0;
+  padding-top: 10px
 }
 
+.createComment {
+  width: 100px;
+  height: 40px;
+  background-color: rgb(203, 222, 222);
+  border-radius: 10px;
+}
 
+.createComment:hover {
+  background-color: rgb(170, 185, 185);
+}
 
-
+.createComment:active {
+  background-color: rgb(115, 125, 125);
+  color: white;
+  border-color: white;
+}
