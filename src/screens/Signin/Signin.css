@@ -1,17 +1,15 @@
-
-.title { 
+.title {
   color: Black;
 }
 
-
-   .form23 { 
+.form23 {
   margin-left: 0%;
   margin-top: 60px;
   color: white;
-  
+
   border: solid black;
   width: 40vw;
-  height:50vh;
+  height: 50vh;
   background-image: url("../../../abstract-planet-against-background-flags-world_476363-2827.avif");
   background-repeat: no-repeat;
   background-position: center;
@@ -23,34 +21,33 @@
   /* margin-bottom: auto; */
 }
 
- .form23 input {
-  display: block;
+.form23 input {
+  /* display: block; */
   display: flex;
-  justify-content:center;
+  justify-content: center;
   margin-bottom: 20px;
-  
 
   background-color: aqua;
 }
 
-#SignIn, #SignUp {
+#SignIn,
+#SignUp {
   background-color: aqua;
 }
 
-.button1  {
-
-   margin-top: 10%;
-  margin-left: 20px; 
-} 
+.button1 {
+  margin-top: 10%;
+  margin-left: 20px;
+}
 
 .button2 {
-   margin-right: 200px;
-  margin-top: 20px; 
-} 
+  margin-right: 200px;
+  margin-top: 20px;
+}
 .DADdiv {
   padding: 50px 0px 0px 0px;
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   font-family: sans-serif;
   height: 100vh;
