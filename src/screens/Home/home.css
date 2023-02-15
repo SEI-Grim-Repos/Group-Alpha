@@ -16,7 +16,6 @@
   margin: 10% auto;
   padding: 10px
 }
-
 .Title {
   display: flex;
   justify-content: center;
@@ -24,25 +23,27 @@
   font-size: 86px;
   margin-bottom: 10%;
 }
-
 h1 {
   margin-top: 0;
   padding-top: 10px
 }
-
 .createComment {
   width: 100px;
   height: 40px;
   background-color: rgb(203, 222, 222);
   border-radius: 10px;
 }
-
 .createComment:hover {
   background-color: rgb(170, 185, 185);
 }
-
 .createComment:active {
   background-color: rgb(115, 125, 125);
   color: white;
   border-color: white;
 }
+
+
+
+
+
+
