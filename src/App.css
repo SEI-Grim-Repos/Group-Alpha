@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+  width: 100vw;
+  background-color: rgb(232, 232, 232);
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.submitComment {
+  margin: 0 auto;
+}
+
+root {
+  margin: 0;
+}
