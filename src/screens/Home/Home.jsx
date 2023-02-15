@@ -43,6 +43,7 @@ const Home = () => {
     <div className="homebody"imagesrc="/screens/Home/farm animals.webp" >
       <Hamburger />
       
+      <div className = "pic"></div>
       <div className='Title'>
         <h1>FoodFeed</h1>
         </div>
@@ -50,6 +51,8 @@ const Home = () => {
       {posts.map((post) => displayPosts(post))}
       {isOpen && <Modal currentPost={currentPost} setModalOpen={setIsOpen} />}
     </div>
+
+
   );
 };
 
