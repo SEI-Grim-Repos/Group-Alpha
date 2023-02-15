@@ -20,7 +20,7 @@ return response.data;
 
 export const createComment = async (CommentData) => {
 try{
-    const response = await api.post("/Comment", CommentData);
+    const response = await api.post("/Comment/", CommentData);
     return response.data;
 } catch (error){
     throw error;
