@@ -40,10 +40,11 @@ const Home = () => {
   };
 
   return (
-    <div className="body"imagesrc="/screens/Home/farm animals.webp" >
+    <div>
+    {/* <div className="body2"imagesrc="/screens/Home/farm animals.webp" > */}
       <Hamburger/>
       <div className='Title'>
-        <h1>FoodFeed</h1>
+      <h1>FoodFeed</h1>
         </div>
 
       {posts.map((post) => displayPosts(post))}
