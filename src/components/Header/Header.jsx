@@ -11,7 +11,7 @@ function Header() {
 return(
     <>
     <div className='Title'>
-        <h1>FoodFeed</h1>
+        {/* <h1>FoodFeed</h1> */}
     </div>
     <div><Hamburger /></div>
     <div id="create-button"></div>
