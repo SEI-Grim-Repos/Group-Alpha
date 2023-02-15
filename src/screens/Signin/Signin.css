@@ -1,10 +1,10 @@
-body {
+/* body {
   display:flex;
   flex-direction:row;
   justify-content: center;
   font-family: sans-serif;
   background-size: 50%;
-} 
+}  */
 .title { 
   color: Black;
 }

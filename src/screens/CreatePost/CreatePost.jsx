@@ -33,7 +33,7 @@ const handleChange = (e) => {
 
 
 return (
-    <div>
+    <div className='body-create'>
         <h1>Create New Post</h1>
         <form className="create-form" onSubmit={handleSubmit} style={{flexDirection: 'column'}}>
             <input type="text"
