@@ -40,8 +40,9 @@ const Home = () => {
   };
 
   return (
-    <div className="body"imagesrc="/screens/Home/farm animals.webp" >
-      <Hamburger/>
+    <div className="homebody"imagesrc="/screens/Home/farm animals.webp" >
+      <Hamburger />
+      
       <div className='Title'>
         <h1>FoodFeed</h1>
         </div>

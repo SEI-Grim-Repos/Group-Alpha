@@ -2,8 +2,9 @@
   color: white;
 }
 
-a {
+Link {
   text-decoration: none;
+  color: white;
 }
 
 .bm-burger-button {
