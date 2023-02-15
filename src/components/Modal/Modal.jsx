@@ -56,16 +56,18 @@ function Modal({ currentPost, setModalOpen }) {
             <div>{currentPost.body}</div>
             <div>Location: {currentPost.location}</div>
             <div>Likes: {currentPost.likes}</div>
+            <h3>Comments:</h3>
+            <div className="comments">
+            {comments.filter((comment) => comment.post === currentPost.id ).map((comments) => (<p>User {currentPost.user_id}: {comments.body}</p>))}
+            </div>
+            <br />
             <form onSubmit={handleCommentSubmit}>
                 <input className="submitComment" type="text" value={newComment} onChange={handleCommentChange} />
                 <button type="submit">Submit Comment</button>
             </form>
-
-            {comments.filter((comment) => comment.post === currentPost.id ).map((comments) => (<p>{comments.body}</p>))}
-
             <button className="closeButton" onClick={handleClose}>X</button>
 
-
+            <br />
             <div className='delete'>
                 <BiIcons.BiTrash
                     id="trash"
