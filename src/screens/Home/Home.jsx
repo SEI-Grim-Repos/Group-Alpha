@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Hamburger from '../../components/HamburgerMenu/Hamburger.jsx';
 import { getPosts } from '../../services/post.js';
 import Modal from '../../components/Modal/Modal.jsx'
 import "./home.css"
@@ -40,8 +39,7 @@ const Home = () => {
   };
 
   return (
-    <div className="body"imagesrc="/screens/Home/farm animals.webp" >
-      <Hamburger/>
+    <div className="homebody"imagesrc="/screens/Home/farm animals.webp" >
       <div className='Title'>
         <h1>FoodFeed</h1>
         </div>

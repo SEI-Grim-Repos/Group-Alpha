@@ -51,9 +51,9 @@ function Signin() {
   }
 
   return (
-    <div>
+    <div className="DADdiv">
       <h2 className="title">Sign In</h2>
-    <div className="form">
+    <div className="form23">
       <form onSubmit={handleSubmit}>
       <input onChange={handleChange} id="username" value={user.username} type="text" placeholder="username" />
       <input onChange={handleChange}  id="password"value={user.password} type="password" placeholder="password" />

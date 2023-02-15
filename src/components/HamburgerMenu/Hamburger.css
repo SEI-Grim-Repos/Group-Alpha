@@ -2,8 +2,9 @@
   color: white;
 }
 
-a {
+Link {
   text-decoration: none;
+  color: white;
 }
 
 .bm-burger-button {
@@ -12,6 +13,15 @@ a {
   height: 30px;
   left: 36px;
   top: 36px;
+}
+
+.logo{
+  font-size: 2rem;
+  color: white;
+}
+
+.countryMap{
+  color: white;
 }
 
 /* Color/shape of burger icon bars */

@@ -1,0 +1,26 @@
+.bodycreate {
+background-color: rgba(51, 201, 243, 0.881);
+margin-left: 30%;
+margin-right: 30%;
+height: 50vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.title{
+    text-shadow: 2px 2px blue;
+    color: dimgray;
+}
+.postbody{
+    background-image: url("/src/screens/CreatePost/moo.avif");
+   background-repeat: no-repeat;
+   height: 100vh;
+   width: 100vw; 
+   background-size:100% 100% ;
+    
+}
+.create-form{
+    display: flex;
+    flex-direction: column;
+}

@@ -7,6 +7,7 @@ import './Modal.css';
 
 function Modal({ currentPost, setModalOpen }) {    
     const [comments, setComments] = useState([]);
+    const [toggle, setToggle] = useState(false)
     const [newComment, setNewComment] = useState("");
 
     const handleClose = () => {
@@ -18,8 +19,17 @@ function Modal({ currentPost, setModalOpen }) {
     };
 
     const handleCommentSubmit = async (event) => {
+        event.preventDefault()
         //postComment will be the post request 
-        createComment(newComment)
+
+        const finalComment = {
+            user_id: currentPost.user_id,
+            post: currentPost.id,
+            body: newComment
+        }
+
+        await createComment(finalComment)
+        setToggle(prev => !prev)
     };
 
     let navigate = useNavigate();
@@ -30,22 +40,19 @@ function Modal({ currentPost, setModalOpen }) {
             setComments(response)
         }
          displayComments()
-
-    }, [])
+    }, [toggle])
 
 
     async function handleDelete (id) {
         await deletePost(id);
-        alert("Post deleted");
-        navigate("/all-posts", { replace: true });
-        window.location.reload();
+        navigate("/", { replace: true });
+        window.location.reload()
       }
-  
     return (
         <div className="modal">
         <div className='modal-content'>
             <img src={currentPost.image}/>
-            <div>{currentPost.title}</div>
+            <div className="title">{currentPost.title}</div>
             <div>{currentPost.body}</div>
             <div>Location: {currentPost.location}</div>
             <div>Likes: {currentPost.likes}</div>
@@ -53,16 +60,17 @@ function Modal({ currentPost, setModalOpen }) {
                 <input className="submitComment" type="text" value={newComment} onChange={handleCommentChange} />
                 <button type="submit">Submit Comment</button>
             </form>
-       {comments.map((comments) => (<p>{comments.body}</p>))}
+
+            {comments.filter((comment) => comment.post === currentPost.id ).map((comments) => (<p>{comments.body}</p>))}
+
             <button className="closeButton" onClick={handleClose}>X</button>
 
 
             <div className='delete'>
-                {/* <button onClick={() => handleDelete (currentPost._id)}> Delete Button </button> */}
                 <BiIcons.BiTrash
                     id="trash"
                     className="icon"
-                    onClick={() => handleDelete (currentPost._id)}
+                    onClick={() => handleDelete (currentPost.id)}
                 />
             </div>
         </div>

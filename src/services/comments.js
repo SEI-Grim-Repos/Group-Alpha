@@ -2,7 +2,7 @@ import api from './apiConfig.js'
 
 export const getComments = async () => {
     try {
-        const response = await api.get('/Comment/')
+        const response = await api.get('/Comment')
         return response.data
 
     } catch (error) {
@@ -22,7 +22,7 @@ export const getComment = async (id) => {
 
 export const createComment = async (newComment) => {
     try {
-        const response = await api.post('/Comment/', newComment)
+        const response = await api.post('/Comment', newComment)
         return response.data
 
     } catch (error) {
