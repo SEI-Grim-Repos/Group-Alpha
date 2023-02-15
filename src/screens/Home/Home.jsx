@@ -39,10 +39,13 @@ const Home = () => {
   };
 
   return (
-    <div className="body"imagesrc="/screens/Home/farm animals.webp" >
+    <div className="homebody"imagesrc="/screens/Home/farm animals.webp" >
+      <Hamburger />
+      
       <div className='Title'>
         <h1>FoodFeed</h1>
-    </div>
+        </div>
+
       {posts.map((post) => displayPosts(post))}
       {isOpen && <Modal currentPost={currentPost} setModalOpen={setIsOpen} />}
     </div>
