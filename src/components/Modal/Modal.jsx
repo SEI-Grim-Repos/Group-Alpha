@@ -49,7 +49,6 @@ function Modal({ currentPost, setModalOpen }) {
         navigate("/all-posts", { replace: true });
         window.location.reload();
       }
-  
     return (
         <div className="modal">
         <div className='modal-content'>
