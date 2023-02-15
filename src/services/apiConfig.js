@@ -7,7 +7,7 @@ import axios from 'axios'
 // })
 
 const api = axios.create({
-    baseURL: 'https://gg1114.herokuapp.com/'
+    baseURL: 'https://gg1114.herokuapp.com'
 })
 
 
