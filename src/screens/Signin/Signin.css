@@ -1,16 +1,19 @@
 .title {
-  color: Black;
+  font-size: 50px;
+  color: aliceblue;
+  animation: glow 1s ease-in-out infinite alternate;
+  text-decoration: solid;
+  margin-bottom: 0px;
 }
 
 .form23 {
   margin-left: 0%;
-  margin-top: 60px;
+  margin-top: 10px;
   color: white;
-
   border: solid black;
   width: 40vw;
   height: 50vh;
-  background-image: url("../../../abstract-planet-against-background-flags-world_476363-2827.avif");
+  background-color: antiquewhite;
   background-repeat: no-repeat;
   background-position: center;
   justify-content: center;
@@ -26,25 +29,37 @@
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  border-radius: 5px;
+  height: 50px;
+  width: 400px;
+  font-size: 40px;
+  text-align: center;
 
-  background-color: aqua;
+  background-color: whitesmoke;
 }
 
-#SignIn,
-#SignUp {
-  background-color: aqua;
+.ChildButton {
+margin: 20px;
+height: 40px;
+width: 100px;
 }
 
-.button1 {
+#password, #username {
+  margin: 0 auto;
+  margin-bottom: 45px;
+}
+
+/* .button1 {
   margin-top: 10%;
-  margin-left: 20px;
+  margin-left: 50px;
 }
 
 .button2 {
   margin-right: 200px;
   margin-top: 20px;
-}
+} */
 .DADdiv {
+  background-image: url(/public/Images/Countries.jpg);
   padding: 50px 0px 0px 0px;
   display: flex;
   flex-direction: column;
