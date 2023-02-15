@@ -34,16 +34,16 @@ const Home = () => {
         <div> {currentValue.category} </div>
         <div> Location: {currentValue.location} </div>
       <br></br>
-        <button onClick={() => handleClick(currentValue)}>Comment</button>
+        <button className='createComment' onClick={() => handleClick(currentValue)}>Comment</button>
       </div>
     );
   };
 
   return (
-    <div className="body">
+    <div className="body"imagesrc="/screens/Home/farm animals.webp" >
       <Hamburger/>
       <div className='Title'>
-        <h1>NewsFeed</h1>
+        <h1>FoodFeed</h1>
         </div>
 
       {posts.map((post) => displayPosts(post))}

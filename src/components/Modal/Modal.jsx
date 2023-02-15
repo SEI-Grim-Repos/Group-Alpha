@@ -50,10 +50,10 @@ function Modal({ currentPost, setModalOpen }) {
             <div>Location: {currentPost.location}</div>
             <div>Likes: {currentPost.likes}</div>
             <form onSubmit={handleCommentSubmit}>
-                <input type="text" value={newComment} onChange={handleCommentChange} />
+                <input className="submitComment" type="text" value={newComment} onChange={handleCommentChange} />
                 <button type="submit">Submit Comment</button>
             </form>
-       {comments.map((comments) => (<p>{comments}</p>))}
+       {comments.map((comments) => (<p>{comments.body}</p>))}
             <button className="closeButton" onClick={handleClose}>X</button>
 
 

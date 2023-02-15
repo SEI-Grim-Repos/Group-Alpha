@@ -1,49 +1,43 @@
 .image {
-  width: 20vw;
-  height: 20hv;
+  width: 95%;
+  border-radius: 10px;
 }
 .post {
-  margin-left: 30%;
   margin-top: 60px;
   color: white;
   background-color: rgb(56, 57, 58);
-  border: solid black;
+  border: solid rgb(206, 20, 20);
   width: 40vw;
   height:50vh;
+
   display: content;
   flex-wrap: center;
   justify-content: center;
   border-radius: 10px;
+
+  background-position: center;
+  background-position-x: center;
+
 }
 
-.title {
+.Title {
   display: flex;
   justify-content: center;
-  color:  rgb(56, 57, 58);
-  font-size: 86px;
-  margin: 10%
-}
-/* body {
-  margin: 0;
-  padding: 0;
+
+  color:  rgb(56, 58, 58);
+  font-size: 20px;
+
+text-shadow: 2px 2px red;
 }
 
-
-.image {
-  width: 20vw;
-  height: 30vh;
-}
-
-.post {
- 
+body{
+  background-color: aqua;
+  background-image: url("../../../Barb.png");
+  background-repeat: no-repeat;
   
-  background-color: gray;
-  border: solid white;
-  width: 40vw;
-  height:50vh;
-  display: content;
-  flex-wrap: center;
-  justify-content: center;
-  
+
 }
-*/
+
+
+
+

@@ -4,18 +4,18 @@
   background-color: white;
   box-shadow: 3px 3px 10px rgba(0 0 0 / 0.5);
   padding: 15px;
-  width: 50%;
+  width: 500px;
   justify-content: center;
   align-items: center;
 }
 
 .modal {
-  position: absolute;
-  left: 60%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 45vw;
-  height:50vh;
+  position: fixed;
+  z-index: 999;
+  left: 50%;
+  top: 25%;
+  margin-left: -250px;
+  overflow: hidden;
 }
 
 .closeButton {
@@ -27,6 +27,7 @@
 }
 
 img {
-  width: 20vw;
-  height: 20hv;
+  width: 100%;
+  object-fit: contain;
 }
+
