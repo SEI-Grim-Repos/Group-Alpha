@@ -1,11 +1,13 @@
-import {useState, useEffect} from "react";
+import {useState, useEffect, useRef} from "react";
 import { updatePost } from '../../services/post.jsx'
 import * as BiIcons from "react-icons/bi";
 import './Modal.css';
 
 function Edit_Form({ currentPost, setEditFormOpen }) {    
    
-    const [newComment, setNewComment] = useState("");
+    const [ titleRef, priceRef, descriptionRef, categoryRef, imageRef ] = useRef(); 
+
+    const id = useParams(); 
 
     const handleClose = () => {
       setEditFormOpen(false);
