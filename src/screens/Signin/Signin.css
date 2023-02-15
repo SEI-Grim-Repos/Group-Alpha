@@ -59,6 +59,7 @@ width: 100px;
   margin-top: 20px;
 } */
 .DADdiv {
+  background-image: url(/public/Images/Countries.jpg);
   padding: 50px 0px 0px 0px;
   display: flex;
   flex-direction: column;
@@ -67,8 +68,4 @@ width: 100px;
   height: 100vh;
   /* background-size: 50%; */
   align-items: center;
-}
-.UsrMessage {
-  font-size: 15px;
-  color: black;
 }
