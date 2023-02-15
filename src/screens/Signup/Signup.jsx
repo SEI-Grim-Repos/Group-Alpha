@@ -57,13 +57,11 @@ function SignUp() {
       <input onChange={handleChange} id="username" value={user.username} type="text" placeholder="username" />
       <input onChange={handleChange}  id="password"value={user.password} type="password" placeholder="password" />
       <input onChange={handleChange} id="Confirm"value={user.passwordConfirm}type="password" placeholder="passwordConfirm" />
-      <div>
+      <div></div>
       <button onClick={() => Navigate('/sign-in')} type="submit">Back</button>
       <button type="submit">Sign Up</button>
-      </div>
       </form>
       {user.message}
-      </div>
       </div>
     </div>
   )
