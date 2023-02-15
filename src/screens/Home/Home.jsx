@@ -40,11 +40,11 @@ const Home = () => {
   };
 
   return (
-    <div>
-    {/* <div className="body2"imagesrc="/screens/Home/farm animals.webp" > */}
-      <Hamburger/>
+    <div className="homebody"imagesrc="/screens/Home/farm animals.webp" >
+      <Hamburger />
+      
       <div className='Title'>
-      <h1>FoodFeed</h1>
+        <h1>FoodFeed</h1>
         </div>
 
       {posts.map((post) => displayPosts(post))}

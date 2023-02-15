@@ -1,6 +1,9 @@
-/* body {
-  background-image: url("/owl.jpg")
-} */
+.homebody {
+  background-image: url("/owl.jpg");
+  background-repeat: no-repeat;
+  background-size: 40%;
+  
+}
 
 
 .image {

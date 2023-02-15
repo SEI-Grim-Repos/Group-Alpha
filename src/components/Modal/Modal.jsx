@@ -36,16 +36,15 @@ function Modal({ currentPost, setModalOpen }) {
 
     async function handleDelete (id) {
         await deletePost(id);
-        alert("Post deleted");
-        navigate("/all-posts", { replace: true });
-        window.location.reload();
+        navigate("/", { replace: true });
+        window.location.reload()
       }
   
     return (
         <div className="modal">
         <div className='modal-content'>
             <img src={currentPost.image}/>
-            <div>{currentPost.title}</div>
+            <div className="title">{currentPost.title}</div>
             <div>{currentPost.body}</div>
             <div>Location: {currentPost.location}</div>
             <div>Likes: {currentPost.likes}</div>
@@ -58,11 +57,10 @@ function Modal({ currentPost, setModalOpen }) {
 
 
             <div className='delete'>
-                {/* <button onClick={() => handleDelete (currentPost._id)}> Delete Button </button> */}
                 <BiIcons.BiTrash
                     id="trash"
                     className="icon"
-                    onClick={() => handleDelete (currentPost._id)}
+                    onClick={() => handleDelete (currentPost.id)}
                 />
             </div>
         </div>
