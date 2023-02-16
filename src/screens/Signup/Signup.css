@@ -7,31 +7,32 @@
 }
 
 .form2 {
+  opacity: .9;
   margin-left: 0%;
   margin-top: 10px;
   color: white;
   border: solid black;
-  width: 40vw;
-  height: 50vh;
-  background-color: antiquewhite;
+  width: 30vw;
+  height: 40vh;
+  background-color: white;
   background-repeat: no-repeat;
   background-position: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 30px;
   display: flex;
   flex-direction: column !important;
   align-items: center !important;
 }
 
 .form2 input {
-  
+  border: solid black;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  border-radius: 5px;
-  height: 50px;
-  width: 400px;
-  font-size: 40px;
+  border-radius: 7px;
+  height: 35px;
+  width: 300px;
+  font-size: 30px;
   text-align: center;
   background-color: whitesmoke
 }
@@ -45,12 +46,13 @@ width: 100px;
 
  #Confirm, #password, #username {
   margin: 0 auto;
-  margin-bottom: 35px;
+  margin-bottom: 40px;
 }
 
 
 .MamaDiv {
-  background-image: url(/public/Images/SignUp.jpg);
+  background-image: url(/public/Images/Globe2.jpg);
+  background-attachment: fixed;
   padding: 50px 0px 0px 0px;
   display: flex;
   flex-direction: column;
