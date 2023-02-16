@@ -1,6 +1,6 @@
-.title {
+.title3 {
   font-size: 50px;
-  color: aliceblue;
+  color: white;
   animation: glow 1s ease-in-out infinite alternate;
   text-decoration: solid;
   margin-bottom: 0px;
@@ -21,11 +21,9 @@
   display: flex;
   flex-direction: column !important;
   align-items: center !important;
-  /* margin-bottom: auto; */
 }
 
 .form23 input {
-  /* display: block; */
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
@@ -39,6 +37,7 @@
 }
 
 .ChildButton {
+  border-radius: 5px;
 margin: 20px;
 height: 40px;
 width: 100px;
@@ -49,26 +48,16 @@ width: 100px;
   margin-bottom: 45px;
 }
 
-/* .button1 {
-  margin-top: 10%;
-  margin-left: 50px;
-}
-
-.button2 {
-  margin-right: 200px;
-  margin-top: 20px;
-} */
 .DADdiv {
+  background-image: url(/public/Images/Countries.jpg);
   padding: 50px 0px 0px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-family: sans-serif;
   height: 100vh;
-  /* background-size: 50%; */
   align-items: center;
 }
-.UsrMessage {
-  font-size: 15px;
+.UsrMessage{
   color: black;
 }

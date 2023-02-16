@@ -1,16 +1,64 @@
+.title4 {
+  font-size: 50px;
+  color: white;
+  animation: glow 1s ease-in-out infinite alternate;
+  text-decoration: solid;
+  margin-bottom: 0px;
+}
+
 .form2 {
   margin-left: 0%;
-  margin-top: 60px;
+  margin-top: 10px;
   color: white;
-  /* background-color: rgb(56, 57, 58); */
   border: solid black;
   width: 40vw;
-  height:50vh;
-  background-image: url("../../../abstract-planet-against-background-flags-world_476363-2827.avif");
+  height: 50vh;
+  background-color: antiquewhite;
   background-repeat: no-repeat;
   background-position: center;
-  /* display: content; */
-  /* flex-wrap: center; */
-  /* justify-content: center; */
+  justify-content: center;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.form2 input {
+  
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  height: 50px;
+  width: 400px;
+  font-size: 40px;
+  text-align: center;
+  background-color: whitesmoke
+}
+
+.ChildButton2 {
+border-radius: 5px;
+margin: 10px;
+height: 40px;
+width: 100px;
+}
+
+ #Confirm, #password, #username {
+  margin: 0 auto;
+  margin-bottom: 35px;
+}
+
+
+.MamaDiv {
+  background-image: url(/public/Images/SignUp.jpg);
+  padding: 50px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: sans-serif;
+  height: 100vh;
+  align-items: center;
+}
+.UsrMessage2 {
+  color: black;
 }
