@@ -34,9 +34,9 @@ const Home = () => {
         <img className="image" src={currentValue.image} />
         <div> {currentValue.likes} Likes</div>
         <div> {currentValue.category} </div>
-        <div> Location: {currentValue.location} </div>
+        <div> Country Origin: {currentValue.location} </div>
       <br></br>
-      <button class="button-78" role="button" onClick={() => handleClick(currentValue)}>Comment</button>
+      <button class="button-54" role="button" onClick={() => handleClick(currentValue)}>Comments</button>
       </div>
     );
   };
