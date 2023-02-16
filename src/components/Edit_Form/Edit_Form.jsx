@@ -31,6 +31,11 @@ function Edit_Form({ currentPost, setEditFormOpen }) {
       setEditFormOpen(false);
     };
 
+    async function handleDelete (currentPost) {
+        await deletePost(currentPost.id);
+        setEditFormOpen(false)
+    }
+
     const handleSubmit = async () => {
         //not sure what preventDefault does. yolo
         e.preventDefault(); 
