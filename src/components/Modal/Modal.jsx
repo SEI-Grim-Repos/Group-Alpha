@@ -4,11 +4,13 @@ import { deletePost } from "../../services/post.js";
 import { useNavigate } from "react-router-dom";
 import * as BiIcons from "react-icons/bi";
 import './Modal.css';
+import { Edit_Form } from '../Edit_Form/Edit_Form.jsx'
 
 function Modal({ currentPost, setModalOpen }) {    
     const [comments, setComments] = useState([]);
     const [toggle, setToggle] = useState(false)
     const [newComment, setNewComment] = useState("");
+    const [editFormOpen, setEditFormOpen ] = useState(false); 
 
     const handleClose = () => {
       setModalOpen(false);
@@ -47,7 +49,12 @@ function Modal({ currentPost, setModalOpen }) {
         await deletePost(id);
         navigate("/", { replace: true });
         window.location.reload()
-      }
+    }
+
+    const handleEditButtonClick = () => {
+        setEditFormOpen(true);
+    };
+    
     return (
         <div className="modal">
         <div className='modal-content'>
@@ -66,18 +73,19 @@ function Modal({ currentPost, setModalOpen }) {
                 <button type="submit">Submit Comment</button>
             </form>
             <button className="closeButton" onClick={handleClose}>X</button>
-
+    
             <br />
+            <button className="editFormButton" onClick={handleEditButtonClick}>Edit</button>
+            {editFormOpen && <Edit_Form currentPost={currentPost} setEditFormOpen={setEditFormOpen}/>}
             <div className='delete'>
                 <BiIcons.BiTrash
-                    id="trash"
-                    className="icon"
+                    id="trash"                    className="icon"
                     onClick={() => handleDelete (currentPost.id)}
                 />
             </div>
         </div>
         </div>
-    );
+    );    
 }
 
 export default Modal;
