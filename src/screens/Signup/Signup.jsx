@@ -54,9 +54,9 @@ function SignUp() {
       <h1 className="title4">Sign Up</h1>
     <div className="form2">
       <form onSubmit={handleSubmit}>
-      <input onChange={handleChange} id="username" value={user.username} type="text" placeholder="username" />
-      <input onChange={handleChange}  id="password"value={user.password} type="password" placeholder="password" />
-      <input onChange={handleChange} id="Confirm"value={user.confirmpassword}type="password" placeholder="password confirm" />
+      <input onChange={handleChange} id="username" value={user.username} type="text" placeholder="Username" />
+      <input onChange={handleChange}  id="password"value={user.password} type="password" placeholder="Password" />
+      <input onChange={handleChange} id="Confirm"value={user.confirmpassword}type="password" placeholder="Confirm Password" />
       <div className="FatherButton2">
       <button className="ChildButton2" onClick={() => Navigate('/sign-in')} type="submit">Back</button>
       <button  className="ChildButton2"type="submit">Sign Up</button>
