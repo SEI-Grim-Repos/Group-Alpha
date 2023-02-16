@@ -68,3 +68,15 @@ h1 {
   color: white;
   border-color: white;
 }
+
+@media screen and (max-width: 800px)  {
+  .post  {
+    height: 50%;
+    width: 70vw;
+  }
+
+  .createComment {
+    width: 150px;
+    height: 35px;
+  }
+}
