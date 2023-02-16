@@ -4,7 +4,7 @@ import { deletePost } from "../../services/post.js";
 import { useNavigate } from "react-router-dom";
 import * as BiIcons from "react-icons/bi";
 import './Modal.css';
-import { Edit_Form } from './Edit_Form.jsx'
+import { Edit_Form } from '../Edit_Form/Edit_Form.jsx'
 
 function Modal({ currentPost, setModalOpen }) {    
     const [comments, setComments] = useState([]);

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import { updatePost } from "../../services/post.jsx";
+import { updatePost, deletePost } from "../../services/post.js";
 import * as BiIcons from "react-icons/bi";
-import "./Modal.css";
+import "./Edit_Form.css";
 
 function Edit_Form({ currentPost, setEditFormOpen }) {
   const titleRef = useRef();
@@ -98,4 +98,4 @@ function Edit_Form({ currentPost, setEditFormOpen }) {
   );
 }
 
-export default Edit_Form;
+export { Edit_Form }
