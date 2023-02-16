@@ -15,6 +15,15 @@ Link {
   top: 36px;
 }
 
+.logo{
+  font-size: 2rem;
+  color: white;
+}
+
+.countryMap{
+  color: white;
+}
+
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
   background: #373a47;

@@ -42,8 +42,8 @@ h1 {
 }
 
 .createComment {
-  width: 100px;
-  height: 40px;
+  width: 10vw;
+  height: 3vh;
   background-color: rgb(203, 222, 222);
   border-radius: 10px;
 }
