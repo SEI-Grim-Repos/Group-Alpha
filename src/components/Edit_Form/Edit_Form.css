@@ -1,0 +1,45 @@
+.modal-content {
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 3px 3px 10px rgba(0 0 0 / 0.5);
+  padding: 15px;
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+}
+
+.closeButton {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  display: flex;
+  position: fixed;
+  left: 95%;
+  top: 5%;
+  transform: translate(-50%, -50%);
+}
+
+img {
+  object-fit: contain;
+  width: 60vh;
+  height: 50vh;
+}
+
+.submitComment{
+  background: white;
+}
+
+.title{
+  font-size: 36px;
+  text-emphasis: bold;
+}

@@ -36,14 +36,18 @@ const Home = () => {
         <div> {currentValue.category} </div>
         <div> Location: {currentValue.location} </div>
       <br></br>
-        <button className='createComment' onClick={() => handleClick(currentValue)}>Comment</button>
+      <button class="button-78" role="button" onClick={() => handleClick(currentValue)}>Comment</button>
       </div>
     );
   };
 
   return (
-    <div className="homebody"imagesrc="/screens/Home/farm animals.webp" >
-      <button onClick={() => Navigate('/create-post')}>Create Post</button>
+
+    <div className="homebody" imagesrc="/screens/Home/farm animals.webp" >
+      <div className= 'b78'>
+
+      <button class="button-86" role="button" onClick={() => Navigate('/create-post')}>Create Post</button>
+      </div>
       
       <div className = "pic"></div>
 
