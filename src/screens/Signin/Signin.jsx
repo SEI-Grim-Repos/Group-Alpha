@@ -55,8 +55,8 @@ function Signin() {
       <h1 className="title3">Sign In</h1>
     <div className="form23">
       <form onSubmit={handleSubmit}>
-      <input onChange={handleChange} id="username"value={user.username} type="text" placeholder="username" />
-      <input onChange={handleChange}  id="password"value={user.password} type="password" placeholder="password" />
+      <input onChange={handleChange} id="username"value={user.username} type="text" placeholder="Username" />
+      <input onChange={handleChange}  id="password"value={user.password} type="password" placeholder="Password" />
       <div className="FatherButton">
       <button className="ChildButton" type="submit">Sign In</button>
       <button className="ChildButton" type="submit" onClick={HandleSignUp}>Sign Up</button>

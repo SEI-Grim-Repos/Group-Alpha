@@ -1,8 +1,9 @@
 .b78 {
+  padding-top: 2%;
   display: flex;
   justify-content: flex-end;
-  margin-right: 15%;
-  margin-top: 1%;
+  margin-right: 7%;
+  margin-top: 2%;
 }
 
 .button-86 {
@@ -86,7 +87,8 @@
   background-position: center;
   background-attachment: fixed;
   min-height: 100%;
-  margin-top: -1%;;
+  margin-top: -2%;;
+  margin-bottom: -22%;
  
 
 
@@ -195,22 +197,3 @@ h1 {
     height: 35px;
   }
 }
-
-
-
-
-
-/* .createComment {
-  width: 8vw;
-  height: 3vh;
-  background-color: rgb(203, 222, 222);
-  border-radius: 10px;
-}
-.createComment:hover {
-  background-color: rgb(170, 185, 185);
-}
-.createComment:active {
-  background-color: rgb(115, 125, 125);
-  color: white;
-  border-color: white;
-} */
