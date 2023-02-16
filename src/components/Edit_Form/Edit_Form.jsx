@@ -23,6 +23,7 @@ function Edit_Form({ currentPost, setEditFormOpen }) {
             location: currentPost.location,
             image: currentPost.image //this will be a url 
         };
+        //passing it to setItem loads it into state
         setItem(editObject); 
     });
 
@@ -30,11 +31,19 @@ function Edit_Form({ currentPost, setEditFormOpen }) {
       setEditFormOpen(false);
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
+        //not sure what preventDefault does. yolo
         e.preventDefault(); 
-
+        //this creates the updated Item object, which is necessary as not all values of necesarily been changed
+        const updatedItem = {
+            title: !titleRef.current.value ? item.title: titleRef.current.value,
+            body: !bodyRef.current.value ? item.body: bodyRef.current.value,
+            location: !locationRef.current.value ? item.location: locationRef.current.value,
+            image: !imageRef.current.value ? item.image: imageRef.current.value
+        }
         //updatePost takes two arguments, the id and then the updated object
-        updatePost(currentPost.id, item)
+        await updatePost(currentPost.id, updatedItem)
+        setEditFormOpen(false);     
     }
 
     return (
