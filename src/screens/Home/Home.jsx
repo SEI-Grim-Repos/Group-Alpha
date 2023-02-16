@@ -34,21 +34,25 @@ const Home = () => {
         <img className="image" src={currentValue.image} />
         <div> {currentValue.likes} Likes</div>
         <div> {currentValue.category} </div>
-        <div> Location: {currentValue.location} </div>
+        <div> Country Origin: {currentValue.location} </div>
       <br></br>
-        <button className='createComment' onClick={() => handleClick(currentValue)}>Comment</button>
+      <button class="button-54" role="button" onClick={() => handleClick(currentValue)}>Comments</button>
       </div>
     );
   };
 
   return (
-    <div className="homebody"imagesrc="/screens/Home/farm animals.webp" >
-      <button onClick={() => Navigate('/create-post')}>Create Post</button>
+
+    <div className="homebody" imagesrc="/screens/Home/farm animals.webp" >
+      <div className= 'b78'>
+
+      <button class="button-86" role="button" onClick={() => Navigate('/create-post')}>Create Post</button>
+      </div>
       
       <div className = "pic"></div>
 
       <div className='Title'>
-        <h1>FoodFeed</h1>
+        <h1 className= 'GG'>Gourment Gather</h1>
         </div>
 
       {posts.map((post) => displayPosts(post))}
