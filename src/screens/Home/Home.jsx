@@ -43,7 +43,7 @@ const Home = () => {
 
   return (
     <div className="homebody"imagesrc="/screens/Home/farm animals.webp" >
-      <Hamburger />
+      <button onClick={() => Navigate('/create-post')}>Create Post</button>
       
       <div className = "pic"></div>
 
