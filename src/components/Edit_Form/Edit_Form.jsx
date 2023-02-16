@@ -69,6 +69,7 @@ function Edit_Form({ currentPost, setEditFormOpen }) {
           type="text"
           placeholder={item.title}
           ref={titleRef}
+          className="bottomPadding"
         />
         <div>Edit the body:</div>
         <input
@@ -76,6 +77,7 @@ function Edit_Form({ currentPost, setEditFormOpen }) {
           type="text"
           placeholder={item.body}
           ref={bodyRef}
+          className="bottomPadding"
         />
         <div>Edit the location:</div>
         <input
@@ -83,6 +85,7 @@ function Edit_Form({ currentPost, setEditFormOpen }) {
           type="text"
           placeholder={item.location}
           ref={locationRef}
+          className="bottomPadding"
         />
         <div>Edit image link:</div>
         <input
@@ -90,17 +93,12 @@ function Edit_Form({ currentPost, setEditFormOpen }) {
           type="url"
           placeholder={item.image}
           ref={imageRef}
+          className="bottomPadding"
         />
-        <button type="submit">Submit</button>
+        <br/>
+        <button type="submit" className="bottomPadding">Submit</button>
       </form>
-      <button className='closeEditButton' onClick={handleClose}>Exit</button>
-      <div className="delete">
-        <BiIcons.BiTrash
-          id="trash"
-          className="icon"
-          onClick={() => handleDelete(currentPost)}
-        />Delete Item
-      </div>
+      <button className='closeEditButton bottomPadding' onClick={handleClose}>Exit</button>
     </>
   );
 }

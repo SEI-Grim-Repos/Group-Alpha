@@ -75,6 +75,7 @@
 
 
 .homebody {
+
   background-image: url("../Home/chim.jpg"); 
   /* background-repeat: no-repeat;
   top:0;
@@ -86,10 +87,7 @@
   background-position: center;
   background-attachment: fixed;
   min-height: 100%;
-  margin-top: -1%;;
- 
-
-
+  margin-top: -1%;
   
 }
 
@@ -195,22 +193,3 @@ h1 {
     height: 35px;
   }
 }
-
-
-
-
-
-/* .createComment {
-  width: 8vw;
-  height: 3vh;
-  background-color: rgb(203, 222, 222);
-  border-radius: 10px;
-}
-.createComment:hover {
-  background-color: rgb(170, 185, 185);
-}
-.createComment:active {
-  background-color: rgb(115, 125, 125);
-  color: white;
-  border-color: white;
-} */
