@@ -1,9 +1,11 @@
 import { createPost } from '../../services/post.js';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { COUNTRIES_LIST } from './Countries.js';
 import "./CreatePost.css"
 
 function NewPost(){
+    const [countries,setcontries] = useState()
     const [ post, setPost ] = useState({
         user_id: "",
         image: "",
@@ -25,7 +27,6 @@ const handleSubmit = async (e) => {
 
 const handleChange = (e) => {
     const { value, name } = e.target;
-
     setPost((prev) => ({
         ...prev,
         [name]: value
@@ -63,13 +64,21 @@ return (
             name="body"
             value={post.body}
             onChange={handleChange}></input>
-            
+{/*             
             <input type="text"
             placeholder="Enter location"
             name="location"
             value={post.location}
-            onChange={handleChange}></input>
-            
+            onChange={handleChange}></input> */}
+         
+              <select name="location" onChange={handleChange} id = 'location' >
+                {COUNTRIES_LIST.map((cont, idx) => {
+                    
+                    return(
+                    <option value={cont[0]}>{cont[1]}</option>
+                )})}
+            </select>   
+
             <input type="text"
             placeholder="Enter likes"
             name="likes"
