@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import{ getPosts } from '../../services/post.js';
 import { Link } from "react-router-dom";
 
+
 function CountryMap({closeSideBar}) {
     const [ countries, setCountries ] = useState([])
 
