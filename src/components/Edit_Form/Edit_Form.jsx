@@ -3,46 +3,50 @@ import { updatePost } from '../../services/post.jsx'
 import * as BiIcons from "react-icons/bi";
 import './Modal.css';
 
+
 function Edit_Form({ currentPost, setEditFormOpen }) {    
    
-    const [ titleRef, priceRef, descriptionRef, categoryRef, imageRef ] = useRef(); 
+    const [ titleRef, bodyRef, locationRef, imageRef ] = useRef(); 
+    
+    const [item, setItem] = useState ({
+        title: '', 
+        body: '',
+        location: '',
+        image:'' //this will be a url 
+    })
 
-    const id = useParams(); 
+    useEffect(() => {
+        //currentPost may contain more key value pairs than we are editing, so we trim it down in a new object: 
+        const editObject = {
+            title: currentPost.title, 
+            body: currentPost.body,
+            location: currentPost.location,
+            image: currentPost.image //this will be a url 
+        };
+        setItem(editObject); 
+    });
 
     const handleClose = () => {
       setEditFormOpen(false);
     };
 
-    const handleCommentChange = (event) => {
-        setNewComment(event.target.value);
-    };
+    const handleSubmit = () => {
+        e.preventDefault(); 
+
+        //updatePost takes two arguments, the id and then the updated object
+        updatePost(currentPost.id, item)
+    }
 
     return (
-        <div className="modal">
-        <div className='modal-content'>
-            <img src={currentPost.image}/>
-            <div className="title">{currentPost.title}</div>
-            <div>{currentPost.body}</div>
-            <div>Location: {currentPost.location}</div>
-            <form onSubmit={handleCommentSubmit}>
-                <input className="submitComment" type="text" value={newComment} onChange={handleCommentChange} />
-                <button type="submit">Submit Comment</button>
-            </form>
-
-            {comments.filter((comment) => comment.post === currentPost.id ).map((comments) => (<p>{comments.body}</p>))}
-
-            <button className="closeButton" onClick={handleClose}>X</button>
-
-
+        <>
             <div className='delete'>
                 <BiIcons.BiTrash
                     id="trash"
                     className="icon"
                     onClick={() => handleDelete (currentPost.id)}
                 />
-            </div>
-        </div>
-        </div>
+            </div>  
+        </>       
     );
 }
 
