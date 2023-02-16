@@ -6,7 +6,7 @@ function Signin() {
   const [user, setUser] = useState({
     username: "",
     password: null,
-    passwordConfirm: null,
+    confirmpassword: null,
     valid: true,
     message: ""
   });
@@ -21,7 +21,7 @@ function Signin() {
       message:"Please Enter a valid password"
     })) 
 
-    else if (user.password === user.passwordConfirm) {
+    else if (user.password === user.confirmpassword) {
       Navigate('/')
       
     } else {
