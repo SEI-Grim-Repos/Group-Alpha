@@ -1,8 +1,9 @@
 .b78 {
+  padding-top: 2%;
   display: flex;
   justify-content: flex-end;
-  margin-right: 15%;
-  margin-top: 1%;
+  margin-right: 7%;
+  margin-top: 2%;
 }
 
 .button-86 {
@@ -75,7 +76,6 @@
 
 
 .homebody {
-
   background-image: url("../Home/chim.jpg"); 
   /* background-repeat: no-repeat;
   top:0;
@@ -87,7 +87,11 @@
   background-position: center;
   background-attachment: fixed;
   min-height: 100%;
-  margin-top: -1%;
+  margin-top: -2%;;
+  margin-bottom: -22%;
+ 
+
+
   
 }
 

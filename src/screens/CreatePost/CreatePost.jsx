@@ -7,7 +7,7 @@ import "./CreatePost.css"
 function NewPost(){
     const [countries,setcontries] = useState()
     const [ post, setPost ] = useState({
-        user_id: "",
+        
         image: "",
         title: "",
         body: "",
@@ -41,11 +41,7 @@ return (
     <div className='bodycreate'>
         <h1 className='title'>FoodiePost</h1>
         <form className="create-form" onSubmit={handleSubmit} /*style={{flexDirection: 'column'}}*/>
-            <input type="text"
-            placeholder="Enter User ID"
-            name="user_id"
-            value={post.user_id}
-            onChange={handleChange}></input>
+           
            
             <input type="text"
             placeholder="Enter image URL"
@@ -79,11 +75,7 @@ return (
                 )})}
             </select>   
 
-            <input type="text"
-            placeholder="Enter likes"
-            name="likes"
-            value={post.likes}
-            onChange={handleChange}></input>
+           
            <br></br>
             <button type="submit">Create Post</button>
         </form>
