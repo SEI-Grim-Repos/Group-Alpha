@@ -7,6 +7,7 @@
   width: 500px;
   justify-content: center;
   align-items: center;
+
 }
 
 .modal {
@@ -15,6 +16,8 @@
   top: 50%;
   transform: translate(-50%, -50%);
   border: none;
+  max-height: 80vh;
+  overflow: auto
 }
 
 .closeButton {
