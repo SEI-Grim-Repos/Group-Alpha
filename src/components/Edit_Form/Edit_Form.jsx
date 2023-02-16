@@ -3,6 +3,9 @@ import { updatePost, deletePost } from "../../services/post.js";
 import * as BiIcons from "react-icons/bi";
 import "./Edit_Form.css";
 
+
+//add user ID and like count default values to response 
+
 function Edit_Form({ currentPost, setEditFormOpen }) {
   const titleRef = useRef();
   const bodyRef = useRef();
@@ -47,6 +50,8 @@ function Edit_Form({ currentPost, setEditFormOpen }) {
         ? item.location
         : locationRef.current.value,
       image: !imageRef.current.value ? item.image : imageRef.current.value,
+      likes: currentPost.likes, 
+      user_id: currentPost.user_id
     };
     //updatePost takes two arguments, the id and then the updated object
     await updatePost(currentPost.id, updatedItem);
