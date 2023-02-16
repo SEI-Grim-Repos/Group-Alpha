@@ -75,19 +75,31 @@
 
 
 .homebody {
-  /* background-image: url("/owl.jpg"); */
-  /* /* background-repeat: no-repeat; */
-  
-  
+  background-image: url("../Home/chim.jpg"); 
+  /* background-repeat: no-repeat;
+  top:0;
+  z-index:-1;
+  position: sticky;
+  background-size: 100%; */
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100%;
+  margin-top: -1%;;
+ 
+
+
   
 }
 
 .GG {
+  color: white;
   font-family:'Nanum Brush Script', cursive;
   filter: drop-shadow(8px 8px 4px black);
 }
 
-.pic {
+/* .pic {
   
   position: fixed;
   top:0;
@@ -97,7 +109,7 @@
   width: 40vw;
   z-index:-1;
   background-image: url("/owl.jpg");
-}
+} */
 
 .image {
   width: 80%;
