@@ -53,10 +53,8 @@ function Modal({ currentPost, setModalOpen }) {
 
     const handleEditButtonClick = () => {
         setEditFormOpen(true);
-        //this is the conditional rendering of the edit form: 
-        {editFormOpen && <Edit_Form currentPost={currentPost} setEditFormOpen={setEditFormOpen}/>} 
     };
-
+    
     return (
         <div className="modal">
         <div className='modal-content'>
@@ -75,9 +73,10 @@ function Modal({ currentPost, setModalOpen }) {
                 <button type="submit">Submit Comment</button>
             </form>
             <button className="closeButton" onClick={handleClose}>X</button>
-
+    
             <br />
             <button className="editFormButton" onClick={handleEditButtonClick}>Edit</button>
+            {editFormOpen && <Edit_Form currentPost={currentPost} setEditFormOpen={setEditFormOpen}/>}
             <div className='delete'>
                 <BiIcons.BiTrash
                     id="trash"
@@ -87,7 +86,7 @@ function Modal({ currentPost, setModalOpen }) {
             </div>
         </div>
         </div>
-    );
+    );    
 }
 
 export default Modal;
