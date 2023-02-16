@@ -26,7 +26,7 @@ function Edit_Form({ currentPost, setEditFormOpen }) {
     };
     //passing it to setItem loads it into state
     setItem(editObject);
-  }, [currentPost]);
+  });
 
   const handleClose = () => {
     setEditFormOpen(false);
