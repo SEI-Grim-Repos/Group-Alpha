@@ -1,8 +1,21 @@
 .homebody {
-  background-image: url("/owl.jpg");
-  background-repeat: no-repeat;
-  background-size: 40%;
+  /* background-image: url("/owl.jpg"); */
+  /* /* background-repeat: no-repeat; */
   
+  
+  
+}
+
+.pic {
+  
+  position: fixed;
+  top:0;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  height: 70vh;
+  width: 40vw;
+  z-index:-1;
+  background-image: url("/owl.jpg");
 }
 
 .image {
@@ -42,7 +55,7 @@ h1 {
 }
 
 .createComment {
-  width: 10vw;
+  width: 8vw;
   height: 3vh;
   background-color: rgb(203, 222, 222);
   border-radius: 10px;
