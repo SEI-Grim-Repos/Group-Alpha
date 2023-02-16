@@ -27,19 +27,17 @@
 .form23 input {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
   border-radius: 7px;
-  height: 32px;
-  width: 275px;
-  font-size: 25px;
+  height: 5vh;
+  width: 20vw;
+  font-size: 24px;
   text-align: center;
-
   background-color: whitesmoke;
 }
 
 .ChildButton {
   border-radius: 5px;
-margin: 20px;
+margin: 5px;
 height: 35px;
 width: 90px;
 }

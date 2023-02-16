@@ -14,10 +14,8 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  border: black 3px solid;
   max-height: 80vh;
   overflow: auto
-
 }
 
 .closeButton {
