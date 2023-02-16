@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { getPosts } from '../../services/post.js';
 import Modal from '../../components/Modal/Modal.jsx'
 import "./home.css"
-import Hamburger from '../../components/HamburgerMenu/Hamburger.jsx';
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [currentPost, setCurrentPost] = useState({});
+  const Navigate = useNavigate()
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -41,9 +42,6 @@ const Home = () => {
 
   return (
     <div className="homebody"imagesrc="/screens/Home/farm animals.webp" >
-      <Hamburger />
-      
-      <div className = "pic"></div>
       <div className='Title'>
         <h1>FoodFeed</h1>
         </div>
