@@ -4,11 +4,13 @@ import { deletePost } from "../../services/post.js";
 import { useNavigate } from "react-router-dom";
 import * as BiIcons from "react-icons/bi";
 import './Modal.css';
+import { Edit_Form } from './Edit_Form.jsx'
 
 function Modal({ currentPost, setModalOpen }) {    
     const [comments, setComments] = useState([]);
     const [toggle, setToggle] = useState(false)
     const [newComment, setNewComment] = useState("");
+    const [editFormOpen, setEditFormOpen ] = useState(false); 
 
     const handleClose = () => {
       setModalOpen(false);
@@ -47,7 +49,14 @@ function Modal({ currentPost, setModalOpen }) {
         await deletePost(id);
         navigate("/", { replace: true });
         window.location.reload()
-      }
+    }
+
+    const handleEditButtonClick = () => {
+        setEditFormOpen(true);
+        //this is the conditional rendering of the edit form: 
+        {editFormOpen && <Edit_Form currentPost={currentPost} setEditFormOpen={setEditFormOpen}/>} 
+    };
+
     return (
         <div className="modal">
         <div className='modal-content'>
@@ -68,6 +77,7 @@ function Modal({ currentPost, setModalOpen }) {
             <button className="closeButton" onClick={handleClose}>X</button>
 
             <br />
+            <button className="editFormButton" onClick={handleEditButtonClick}>Edit</button>
             <div className='delete'>
                 <BiIcons.BiTrash
                     id="trash"
