@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { getPosts } from '../../services/post.js';
-import Modal from '../../components/Modal/Modal.jsx'
+import Modal from '../../components/Modal/Modal.jsx';
+import '../../components/Modal/Modal.css';
+import './Country.css';
 
 function CountryPage(){
     const [posts, setPosts] = useState([]);
@@ -9,6 +11,8 @@ function CountryPage(){
     const [currentPost, setCurrentPost] = useState({});
 
     const { country } = useParams()
+
+    let Navigate = useNavigate
   
     useEffect(() => {
       const fetchPosts = async () => {
@@ -28,6 +32,7 @@ function CountryPage(){
   
     const displayPosts = (currentValue) => {
       return (
+        
         <div className="post">
           <h2> {currentValue.title} </h2>
           <img className="image" src={currentValue.image} />
@@ -41,14 +46,22 @@ function CountryPage(){
     };
   
     return (
-      <div className="homebody"imagesrc="/screens/Home/farm animals.webp" >
-        <div className='Title'>
-          <h1>FoodFeed</h1>
-          </div>
-  
-        {posts.filter(post => post.location === country).map((post) => displayPosts(post))}
-        {isOpen && <Modal currentPost={currentPost} setModalOpen={setIsOpen} />}
+      <div className="homebody" imagesrc="/screens/Home/farm animals.webp" >
+      <div className= 'b78'>
+
+      <button class="button-86" role="button" onClick={() => Navigate('/create-post')}>Create Post</button>
       </div>
+      
+      <div className = "pic"></div>
+
+      <div className='Title'>
+        <h1 className= 'GG'>{country} Feed</h1>
+        </div>
+
+      {posts.filter(post => post.location === country).map((post) => displayPosts(post))}
+      {isOpen && <Modal currentPost={currentPost} setModalOpen={setIsOpen} />}
+    </div>
+
     );
 }
 
