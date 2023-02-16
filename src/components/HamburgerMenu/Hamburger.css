@@ -55,7 +55,7 @@ Link {
 
 /* General sidebar styles */
 .bm-menu {
-  background: #373a47;
+  background: rgb(56, 57, 58);
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
