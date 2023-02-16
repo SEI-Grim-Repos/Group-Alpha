@@ -6,6 +6,11 @@
   
 }
 
+.GG {
+  font-family:'Nanum Brush Script', cursive;
+  filter: drop-shadow(8px 8px 4px #FAEA10);
+}
+
 .pic {
   
   position: fixed;
@@ -67,4 +72,9 @@ h1 {
   background-color: rgb(115, 125, 125);
   color: white;
   border-color: white;
+}
+
+@font-face {
+  font-family:'Nanum Brush Script', cursive;
+  src:  url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
 }

@@ -48,7 +48,7 @@ const Home = () => {
       <div className = "pic"></div>
 
       <div className='Title'>
-        <h1>FoodFeed</h1>
+        <h1 className= 'GG'>Gourment Gather</h1>
         </div>
 
       {posts.map((post) => displayPosts(post))}
