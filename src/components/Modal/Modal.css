@@ -7,6 +7,7 @@
   width: 500px;
   justify-content: center;
   align-items: center;
+  max-height: 90vh;
 }
 
 .modal {
@@ -30,9 +31,9 @@
 }
 
 img {
-  object-fit: contain;
-  width: 60vh;
-  height: 40vh;
+  /* object-fit: contain; */
+  max-width: 50vh;
+  max-height: 30vh;
 }
 
 .submitComment{
@@ -45,6 +46,11 @@ img {
 }
 
 .comments{
+  max-height: 10vh;
+  overflow: scroll;
+}
+
+.Edit{
   max-height: 10vh;
   overflow: scroll;
 }
