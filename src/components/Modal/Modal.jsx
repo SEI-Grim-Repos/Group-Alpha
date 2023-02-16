@@ -24,8 +24,8 @@ function Modal({ currentPost, setModalOpen }) {
 
         const finalComment = {
             user_id: currentPost.user_id,
+            body: newComment,
             post: currentPost.id,
-            body: newComment
         }
 
         await createComment(finalComment)
