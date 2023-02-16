@@ -7,6 +7,7 @@ import './Modal.css';
 
 function Modal({ currentPost, setModalOpen }) {    
     const [comments, setComments] = useState([]);
+    const [toggle, setToggle] = useState(false)
     const [newComment, setNewComment] = useState("");
 
     const handleClose = () => {
@@ -18,8 +19,17 @@ function Modal({ currentPost, setModalOpen }) {
     };
 
     const handleCommentSubmit = async (event) => {
+        event.preventDefault()
         //postComment will be the post request 
-        createComment(newComment)
+
+        const finalComment = {
+            user_id: currentPost.user_id,
+            post: currentPost.id,
+            body: newComment
+        }
+
+        await createComment(finalComment)
+        setToggle(prev => !prev)
     };
 
     let navigate = useNavigate();
@@ -30,8 +40,7 @@ function Modal({ currentPost, setModalOpen }) {
             setComments(response)
         }
          displayComments()
-
-    }, [])
+    }, [toggle])
 
 
     async function handleDelete (id) {
@@ -39,7 +48,6 @@ function Modal({ currentPost, setModalOpen }) {
         navigate("/", { replace: true });
         window.location.reload()
       }
-  
     return (
         <div className="modal">
         <div className='modal-content'>
@@ -48,14 +56,18 @@ function Modal({ currentPost, setModalOpen }) {
             <div>{currentPost.body}</div>
             <div>Location: {currentPost.location}</div>
             <div>Likes: {currentPost.likes}</div>
+            <h3>Comments:</h3>
+            <div className="comments">
+            {comments.filter((comment) => comment.post === currentPost.id ).map((comments) => (<p>User {currentPost.user_id}: {comments.body}</p>))}
+            </div>
+            <br />
             <form onSubmit={handleCommentSubmit}>
                 <input className="submitComment" type="text" value={newComment} onChange={handleCommentChange} />
                 <button type="submit">Submit Comment</button>
             </form>
-       {comments.map((comments) => (<p>{comments.body}</p>))}
             <button className="closeButton" onClick={handleClose}>X</button>
 
-
+            <br />
             <div className='delete'>
                 <BiIcons.BiTrash
                     id="trash"
