@@ -2,7 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { updatePost, deletePost } from "../../services/post.js";
 import * as BiIcons from "react-icons/bi";
 import "./Edit_Form.css";
-
+import { useNavigate } from "react-router-dom";
+import React from "react";
 
 //add user ID and like count default values to response 
 
@@ -56,7 +57,10 @@ function Edit_Form({ currentPost, setEditFormOpen }) {
     //updatePost takes two arguments, the id and then the updated object
     await updatePost(currentPost.id, updatedItem);
     setEditFormOpen(false);
+    window.location.reload();
   };
+
+  let navigate = useNavigate()
 
   return (
     <> 

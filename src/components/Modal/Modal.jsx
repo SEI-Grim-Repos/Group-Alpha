@@ -79,8 +79,7 @@ function Modal({ currentPost, setModalOpen }) {
             {editFormOpen && <Edit_Form currentPost={currentPost} setEditFormOpen={setEditFormOpen}/>}
             <div className='delete'>
                 <BiIcons.BiTrash
-                    id="trash"
-                    className="icon"
+                    id="trash"                    className="icon"
                     onClick={() => handleDelete (currentPost.id)}
                 />
             </div>
