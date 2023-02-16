@@ -25,6 +25,7 @@
 }
 
 .form2 input {
+  font-size: 30px;
   border: solid black;
   display: flex;
   justify-content: center;
