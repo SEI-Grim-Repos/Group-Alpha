@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
 import{ getPosts } from '../../services/post.js';
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function CountryMap() {
+function CountryMap({closeSideBar}) {
     const [ countries, setCountries ] = useState([])
-
-    let { location } = useParams
 
     useEffect(() => {
         async function getAllCountries(){
@@ -19,7 +17,7 @@ function CountryMap() {
     return (
         <div>
        {countries.map((country) => (
-        <Link to={`/country/${country.location}`}>
+        <Link to={`/country/${country.location}`} onClick={closeSideBar}>
             <p>{country.location}</p>
         </Link>
         ))}
