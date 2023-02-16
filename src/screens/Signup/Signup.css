@@ -25,6 +25,7 @@
 }
 
 .form2 input {
+  font-size: 25px;
   border: solid black;
   display: flex;
   justify-content: center;
@@ -32,7 +33,6 @@
   border-radius: 7px;
   height: 35px;
   width: 300px;
-  font-size: 30px;
   text-align: center;
   background-color: whitesmoke
 }
@@ -40,8 +40,8 @@
 .ChildButton2 {
 border-radius: 5px;
 margin: 10px;
-height: 40px;
-width: 100px;
+height: 35px;
+width: 90px;
 }
 
  #Confirm, #password, #username {
