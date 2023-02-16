@@ -54,14 +54,7 @@ function Edit_Form({ currentPost, setEditFormOpen }) {
   };
 
   return (
-    <>
-      <div className="delete">
-        <BiIcons.BiTrash
-          id="trash"
-          className="icon"
-          onClick={() => handleDelete(currentPost)}
-        />
-      </div>
+    <> 
       <form onSubmit={handleSubmit}>
         <div>Edit the title:</div>
         <input
@@ -93,6 +86,14 @@ function Edit_Form({ currentPost, setEditFormOpen }) {
         />
         <button type="submit">Submit</button>
       </form>
+      <button className='closeEditButton' onClick={handleClose}>Exit</button>
+      <div className="delete">
+        <BiIcons.BiTrash
+          id="trash"
+          className="icon"
+          onClick={() => handleDelete(currentPost)}
+        />Delete Item
+      </div>
     </>
   );
 }
