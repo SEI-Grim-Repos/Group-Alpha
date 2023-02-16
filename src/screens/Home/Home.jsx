@@ -42,7 +42,8 @@ const Home = () => {
 
   return (
     <div className="homebody"imagesrc="/screens/Home/farm animals.webp" >
-      <button onClick={() => Navigate('/create-post')}>Create Post</button>
+      {/* <Hamburger /> */}
+      
       <div className='Title'>
         <h1>FoodFeed</h1>
         </div>
