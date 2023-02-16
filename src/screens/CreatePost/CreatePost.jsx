@@ -1,90 +1,93 @@
-import { createPost } from '../../services/post.js';
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { COUNTRIES_LIST } from './Countries.js';
-import "./CreatePost.css"
+import { createPost } from "../../services/post.js";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { COUNTRIES_LIST } from "./Countries.js";
+import "./CreatePost.css";
 
-function NewPost(){
-    const [countries,setcontries] = useState()
-    const [ post, setPost ] = useState({
-        
-        image: "",
-        title: "",
-        body: "",
-        location: "",
-        likes: ""
-    })
+function NewPost() {
+  const [post, setPost] = useState({
+    image: "",
+    title: "",
+    body: "",
+    date: "",
+    location: "",
+    likes: 0,
+  });
 
+  let navigate = useNavigate();
 
-let navigate = useNavigate();
-
-const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await createPost(post);
-    navigate(`/`, { replace: true })
-    console.log(response)
-};
+    navigate(`/`, { replace: true });
+  };
 
-const handleChange = (e) => {
+  const handleChange = (e) => {
     const { value, name } = e.target;
     setPost((prev) => ({
-        ...prev,
-        [name]: value
-    }))
-}
+      ...prev,
+      [name]: value,
+    }));
+  };
 
-
-return (
-
-    <div className='postbody' >
-
-    <div className='bodycreate'>
-        <h1 className='title'>FoodiePost</h1>
-        <form className="create-form" onSubmit={handleSubmit} /*style={{flexDirection: 'column'}}*/>
-           
-           
-            <input type="text"
+  return (
+    <div className="postbody">
+      <div className="bodycreate">
+        <h1 className="title">FoodiePost</h1>
+        <form
+          className="create-form"
+          onSubmit={handleSubmit} /*style={{flexDirection: 'column'}}*/
+        >
+          <input
+            type="text"
             placeholder="Enter image URL"
             name="image"
             value={post.image}
-            onChange={handleChange}></input>
-            
-            <input type="text"
+            onChange={handleChange}
+          ></input>
+
+          <input
+            type="text"
             placeholder="Enter title"
             name="title"
             value={post.title}
-            onChange={handleChange}></input>
-            
-            <input type="text"
+            onChange={handleChange}
+          ></input>
+
+            <input
+            type="date"
+            name="date"
+            value={post.date}
+            min="2023-01-01"
+            onChange={handleChange}
+          ></input>
+
+          <input
+            type="text"
             placeholder="Enter body..."
             name="body"
             value={post.body}
-            onChange={handleChange}></input>
-{/*             
+            onChange={handleChange}
+          ></input>
+          {/*             
             <input type="text"
             placeholder="Enter location"
             name="location"
             value={post.location}
             onChange={handleChange}></input> */}
-         
-              <select name="location" onChange={handleChange} id = 'location' >
-                {COUNTRIES_LIST.map((cont, idx) => {
-                    
-                    return(
-                    <option value={cont[0]}>{cont[1]}</option>
-                )})}
-            </select>   
 
-           
-           <br></br>
-            <button type="submit">Create Post</button>
+          <select name="location" onChange={handleChange} id="location">
+            {COUNTRIES_LIST.map((cont, idx) => {
+              return <option value={cont[0]}>{cont[1]}</option>;
+            })}
+          </select>
+
+          <br></br>
+          <button type="submit">Create Post</button>
         </form>
-       
+      </div>
     </div>
-            </div>
-)
+  );
 }
-
-
 
 export default NewPost;
