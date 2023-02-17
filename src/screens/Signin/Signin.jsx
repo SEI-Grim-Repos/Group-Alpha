@@ -54,6 +54,7 @@ function Signin({setUser}) {
             value={userData.username}
             type="text"
             placeholder="Username"
+            className="inputUsername"
           />
           <input
             onChange={handleChange}
@@ -61,6 +62,7 @@ function Signin({setUser}) {
             value={userData.password}
             type="password"
             placeholder="Password"
+            className="inputUserPassword"
           />
           <div className="FatherButton">
             <button className="ChildButton" type="submit">
