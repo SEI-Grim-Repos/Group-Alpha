@@ -24,7 +24,7 @@
 }
 
 .postbody{
-    background-image: url("../Home/chim.jpg");
+   background-image: url("../Home/chim.jpg");
    background-repeat: no-repeat;
    height: 100vh;
    width: 100vw; 
@@ -40,12 +40,15 @@ input {
     margin-bottom: 10px;
     height: 3vh;
     text-align: center; 
+    width: 40vw; 
 }
 
 .countryAndCalendar {
     margin-bottom: 10px;
     height: 3vh;
     text-align: center;  
+    width: 40vw; 
+
 }
 
 .create-Post {
