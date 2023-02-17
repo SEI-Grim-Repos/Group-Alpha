@@ -37,9 +37,19 @@
 }
 
 input {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    height: 3vh;
+    text-align: center; 
 }
 
 .countryAndCalendar {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    height: 3vh;
+    text-align: center;  
+}
+
+.create-Post {
+    height: 3vh;
+    width: 10vh;
+    margin: 0 auto;     
 }
