@@ -7,6 +7,8 @@
   width: 500px;
   justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal {
@@ -34,15 +36,25 @@ img {
   object-fit: contain;
   width: 60vh;
   height: 40vh;
+  width: fit-content;
 }
 
 .submitComment{
   background: white;
+  width: 50%;
 }
 
-.title{
-  font-size: 36px;
-  text-emphasis: bold;
+.submitButton {
+  width: 30%;
+  height: 30px;
+  margin-top: 10px
+}
+
+.PostTitle{
+  font-size: 56px;
+  color: black;
+  font-family:'Nanum Brush Script', cursive;
+  filter: drop-shadow(8px 8px 4px black);
 }
 
 .comments{
@@ -52,4 +64,28 @@ img {
 
 .editFormButton {
   margin-bottom: 8px; 
+}
+
+.PostInfo {
+  margin-top: 10px;
+  background-color: rgb(248, 248, 248);
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid black;
+}
+
+.CommentContainer {
+  background-color: rgb(238, 238, 238);
+  width: 100%;
+  margin-top: 10px;
+  border: 1px solid black;
+  padding-bottom: 10px;
+}
+
+.CommentForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

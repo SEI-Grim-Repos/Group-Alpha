@@ -56,20 +56,25 @@ function Modal({ currentPost, setModalOpen }) {
         <div className="modal">
             <button className="closeButton" onClick={handleClose}>X</button>
             <div className='modal-content'>
-                <img src={post.post?.image}/>
-                <div className="title">{post.post?.title}</div>
-                <div>{post.post?.body}</div>
-                <div>Location: {post.post?.location}</div>
-                <div>Likes: {post.post?.likes}</div>
+                <div className="PostTitle">{post.post?.title}</div>
+                <img className="PostImg" src={post.post?.image}/>
+                <div className="PostInfo">
+                    <div>{post.post?.body}</div>
+                    <div>Location: {post.post?.location}</div>
+                    <div>Likes: {post.post?.likes}</div>
+                </div>
+
+                <div className="CommentContainer">
                 <h3>Comments:</h3>
                 <div className="comments">
                 {post.comments?.map((comment) => (<p key={comment.id}>{comment.user}: {comment.body}</p>))}
                 </div>
                 <br />
-                <form onSubmit={handleCommentSubmit}>
-                    <input className="submitComment" type="text" value={newComment} onChange={handleCommentChange} />
-                    <button type="submit">Submit Comment</button>
+                <form className="CommentForm" onSubmit={handleCommentSubmit}>
+                    <input className="submitComment" placeholder="new comment" type="text" value={newComment} onChange={handleCommentChange} />
+                    <button className="submitButton" type="submit">Submit Comment</button>
                 </form>
+                </div>
         
                 <br />
                 <button className="editFormButton" onClick={handleEditButtonClick}>Edit</button>
