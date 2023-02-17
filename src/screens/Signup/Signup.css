@@ -34,7 +34,8 @@
   height: 5vh;
   width: 20vw;
   text-align: center;
-  background-color: whitesmoke
+  background-color: whitesmoke;
+  margin: 10px auto 10px auto;
 }
 
 .ChildButton2 {
@@ -63,4 +64,14 @@ width: 90px;
 }
 .UsrMessage2 {
   color: black;
+}
+
+@media screen and (max-width: 1000px) {
+  .form2 {
+    width: 70vw;
+  }
+
+  .form2 input {
+    width: 100%;
+  }
 }
