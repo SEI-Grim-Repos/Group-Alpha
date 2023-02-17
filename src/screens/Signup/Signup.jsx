@@ -1,73 +1,97 @@
-import "./Signup.css"
+import "./Signup.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { getUser, registerUser } from "../../services/users.js";
 
-function SignUp() {
-  const [user, setUser] = useState({
+function SignUp({setUser}) {
+  const [userData, setUserData] = useState({
     username: "",
     password: "",
-    confirmpassword: "",
+    re_password: "",
     valid: true,
-    message: ""
+    location: "",
   });
-  const Navigate = useNavigate()
-  const handleSubmit = (e) => {
+
+  const Navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (user.password === "") 
+    if (userData.password === "")
+      setUser({ message: "Please Enter a valid username and password" });
+    else if (userData.password === userData.re_password) {
+        await registerUser(userData);
     
-    setUser({message:"Please Enter a valid username and password"}) 
-
-    else if (user.password === user.confirmpassword) {
-      Navigate('/sign-in')
-      
+        let response = await getUser()
+        setUser(response)
+        Navigate("/");
     } else {
       setUser((prev) => ({
         ...prev,
-        message:"Confirm password must be the same as password"
-      }))
+        message: "Confirm password must be the same as password",
+      }));
     }
-  }
+  };
 
   const handleChange = (e) => {
-    if (e.target.id === "username") {
-      setUser( (prev) => ({
-        ...prev,
-        username: e.target.value,
-      }));
-    } else if (e.target.id === "password") {
-      setUser((prev) => ({
-        ...prev,
-        password: e.target.value,
-      }));
-    } else if (e.target.id === "Confirm") {
-      setUser((prev) => ({
-        ...prev,
-        confirmpassword: e.target.value,
-      }));
+    const {name, value} = e.target
 
+    setUserData(prev => ({
+        ...prev,
+        [name]: value
+    }))
   };
-  }
 
   return (
     <div className="MamaDiv">
       <h1 className="title4">Sign Up</h1>
-    <div className="form2">
-      <form onSubmit={handleSubmit}>
-      <input onChange={handleChange} id="username" value={user.username} type="text" placeholder="Username" />
-      <input onChange={handleChange}  id="password"value={user.password} type="password" placeholder="Password" />
-      <input onChange={handleChange} id="Confirm"value={user.confirmpassword}type="password" placeholder="Confirm Password" />
-      <div className="FatherButton2">
-      <button className="ChildButton2" onClick={() => Navigate('/sign-in')} type="submit">Back</button>
-      <button  className="ChildButton2"type="submit">Sign Up</button>
+      <div className="form2">
+        <form onSubmit={handleSubmit}>
+          <input
+            onChange={handleChange}
+            value={userData.username}
+            type="text"
+            name="username"
+            placeholder="Username"
+          />
+          <input
+            onChange={handleChange}
+            value={userData.location}
+            type="text"
+            name="location"
+            placeholder="Enter Location"
+          />
+          <input
+            onChange={handleChange}
+            value={userData.password}
+            type="password"
+            name="password"
+            placeholder="Password"
+          />
+          <input
+            onChange={handleChange}
+            value={userData.re_password}
+            type="password"
+            name="re_password"
+            placeholder="Confirm Password"
+          />
+          <div className="FatherButton2">
+            <button
+              className="ChildButton2"
+              onClick={() => Navigate("/sign-in")}
+              type="submit"
+            >
+              Login
+            </button>
+            <button className="ChildButton2" type="submit">
+              Sign Up
+            </button>
+          </div>
+        </form>
+        <div className="UsrMessage2">{userData.message}</div>
       </div>
-      </form>
-      <div className="UsrMessage2">
-      {user.message}
-      </div>
-      </div>
-      </div>
-  )
+    </div>
+  );
 }
 
 export default SignUp;

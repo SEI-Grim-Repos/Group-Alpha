@@ -1,73 +1,84 @@
-import "./Signin.css"
+import "./Signin.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { loginUser, getUser } from "../../services/users.js";
 
-function Signin() {
-  const [user, setUser] = useState({
+function Signin({setUser}) {
+  const [userData, setUserData] = useState({
     username: "",
     password: null,
-    confirmpassword: null,
     valid: true,
-    message: ""
+    message: "",
   });
-  const Navigate = useNavigate()
-  const handleSubmit = (e) => {
+
+  const Navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (user.password === "") 
-    
-    setUser((prev) => ({
-      ...prev,
-      message:"Please Enter a valid password"
-    })) 
-
-    else if (user.password === user.confirmpassword) {
-      Navigate('/')
-      
+    if (userData.password === "") {
+        setUserData((prev) => ({
+          ...prev,
+          message: "Please Enter a valid password",
+        }));
     } else {
-      setUser((prev) => ({
-        ...prev,
-        message:"Wrong password try again!"
-      }))
+        await loginUser(userData);
+    
+        let response = await getUser()
+        setUser(response)
+        Navigate("/");
     }
-  }
+  };
 
   const handleChange = (e) => {
-    if (e.target.id === "username") {
-      setUser( (prev) => ({
+    const {name, value} = e.target
+
+    setUserData(prev => ({
         ...prev,
-        username: e.target.value,
-      }));
-    } else if (e.target.id === "password") {
-      setUser((prev) => ({
-        ...prev,
-        password: e.target.value,
-      }));
+        [name]: value
+    }))
   };
-  }
 
   const HandleSignUp = (e) => {
-    Navigate("/sign-up")
-  }
+    Navigate("/sign-up");
+  };
 
   return (
     <div className="DADdiv">
       <h1 className="title3">Sign In</h1>
-    <div className="form23">
-      <form onSubmit={handleSubmit}>
-      <input onChange={handleChange} id="username"value={user.username} type="text" placeholder="Username" />
-      <input onChange={handleChange}  id="password"value={user.password} type="password" placeholder="Password" />
-      <div className="FatherButton">
-      <button className="ChildButton" type="submit">Sign In</button>
-      <button className="ChildButton" type="submit" onClick={HandleSignUp}>Sign Up</button>
-      </div>
-      </form>
-      <div className="UsrMessage">
-      {user.message}
+      <div className="form23">
+        <form onSubmit={handleSubmit}>
+          <input
+            onChange={handleChange}
+            name="username"
+            value={userData.username}
+            type="text"
+            placeholder="Username"
+          />
+          <input
+            onChange={handleChange}
+            name="password"
+            value={userData.password}
+            type="password"
+            placeholder="Password"
+          />
+          <div className="FatherButton">
+            <button className="ChildButton" type="submit">
+              Sign In
+            </button>
+            <button
+              className="ChildButton"
+              type="submit"
+              onClick={HandleSignUp}
+            >
+              Sign Up
+            </button>
+          </div>
+        </form>
+        <div className="UsrMessage">{userData.message}</div>
       </div>
     </div>
-    </div>
-  )
+  );
 }
 
 export default Signin;
