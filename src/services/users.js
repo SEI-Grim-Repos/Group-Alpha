@@ -1,48 +1,70 @@
 import api from "./apiConfig.js";
 
-
-export const getUsers = async () => {
-    try {
-        const response = await api.get('/User');
-        return response.data;
-    } catch (error) {
-        throw error;
-    }
+const getToken = () => {
+  return new Promise((resolve) => {
+    resolve(`Token ${localStorage.getItem("knox") || null}`);
+  });
 };
 
-export const getUser = async (id) => {
-    try {
-        const response = await api.get(`/User/${id}`);
-        return response.data;
-    } catch (error) {
-        throw error;
-    }
+export const getUser = async () => {
+  try {
+    let token = await getToken();
+
+    const headers = {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: token,
+    };
+
+    const response = await api.get("/user/profile", { headers }); 
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
 };
 
-export const createUser = async (UserData) => {
-    try {
-        const response = await api.post("/User", UserData);
-        return response.data;
-    } catch (error) {
-        throw error;
-    }
+export const registerUser = async (userData) => {
+  try {
+    const response = await api.post("/user/signup", userData);
+    localStorage.setItem("knox", response.data["token"]); 
+    return response.data["token"];
+  } catch (error) {
+    throw error;
+  }
 };
 
-
-export const updateUser = async (id, UserData) => {
-    try {
-        const response = await api.put(`/User/${id}`, UserData);
-        return response.data;
-    } catch (error) {
-        throw error;
-    }
+export const loginUser = async (userData) => {
+  try {
+    const response = await api.post("/user/login", userData);
+    localStorage.setItem("knox", response.data["token"]); 
+    return response.data["token"];
+  } catch (error) {
+    throw error;
+  }
 };
 
-export const deleteUser = async (id) => {
-    try {
-        const response = await api.delete(`/User/${id}`);
-        return response.data;
-    } catch (error) {
-        throw error;
-    }
+export const signOut = async () => {
+  try {
+    localStorage.removeItem("knox");
+    return true;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const changeUserInfo = async (userData, profile_id) => {
+  try {
+    let token = await getToken();
+
+    const headers = {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: token,
+    };
+
+    const response = await api.put(`/user/profile/${profile_id}`, userData);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
 };

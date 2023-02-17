@@ -18,10 +18,10 @@ let navigate = useNavigate();
 const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await createPost(post);
-    navigate(`/`, { replace: true })
-    console.log(response)
-};
-const handleChange = (e) => {
+    navigate(`/`, { replace: true });
+  };
+
+  const handleChange = (e) => {
     const { value, name } = e.target;
     setPost((prev) => ({
         ...prev,
@@ -42,13 +42,27 @@ return (
             placeholder="Enter image URL"
             name="image"
             value={post.image}
-            onChange={handleChange}></input>
-            <input type="text"
+            onChange={handleChange}
+          ></input>
+
+          <input
+            type="text"
             placeholder="Enter title"
             name="title"
             value={post.title}
-            onChange={handleChange}></input>
-            <input type="text"
+            onChange={handleChange}
+          ></input>
+
+            <input
+            type="date"
+            name="date"
+            value={post.date}
+            min="2023-01-01"
+            onChange={handleChange}
+          ></input>
+
+          <input
+            type="text"
             placeholder="Enter body..."
             name="body"
             value={post.body}
@@ -67,8 +81,9 @@ return (
            <br></br>
             <button type="submit">Create Post</button>
         </form>
+      </div>
     </div>
-            </div>
-)
+  );
 }
+
 export default NewPost;

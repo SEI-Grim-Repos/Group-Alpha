@@ -29,7 +29,7 @@ const Home = () => {
 
   const displayPosts = (currentValue) => {
     return (
-      <div className="post">
+      <div key={currentValue.id} className="post">
         <h2> {currentValue.title} </h2>
         <img className="image" src={currentValue.image} />
         <div> {currentValue.likes} Likes</div>
