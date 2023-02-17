@@ -1,10 +1,10 @@
 import { createPost } from '../../services/post.js';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { COUNTRIES_LIST } from './Countries.js';
-import "./CreatePost.css"
+import "./CreatePost.css";
+
 function NewPost(){
-    const [countries,setcontries] = useState()
     const [ post, setPost ] = useState({
         user_id: "",
         image: "",
@@ -14,6 +14,7 @@ function NewPost(){
         likes: ""
     })
 let navigate = useNavigate();
+
 const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await createPost(post);
@@ -31,7 +32,7 @@ return (
     <div className='postbody' >
     <div className='bodycreate'>
         <h1 className='title'>FoodiePost</h1>
-        <form className="create-form" onSubmit={handleSubmit} /*style={{flexDirection: 'column'}}*/>
+        <form className="create-form" onSubmit={handleSubmit}>
             <input type="text"
             placeholder="Enter User ID"
             name="user_id"
@@ -52,12 +53,6 @@ return (
             name="body"
             value={post.body}
             onChange={handleChange}></input>
-{/*
-            <input type="text"
-            placeholder="Enter location"
-            name="location"
-            value={post.location}
-            onChange={handleChange}></input> */}
               <select name="location" onChange={handleChange} id = 'location' >
                 {COUNTRIES_LIST.map((cont, idx) => {
                     return(

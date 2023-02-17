@@ -12,7 +12,7 @@ function CountryPage(){
 
     const { country } = useParams()
 
-    let Navigate = useNavigate
+    let navigate = useNavigate()
   
     useEffect(() => {
       const fetchPosts = async () => {
@@ -49,7 +49,7 @@ function CountryPage(){
       <div className="homebody" imagesrc="/screens/Home/farm animals.webp" >
       <div className= 'b78'>
 
-      <button class="button-86" role="button" onClick={() => Navigate('/create-post')}>Create Post</button>
+      <button class="button-86" role="button" onClick={() => navigate('/create-post')}>Create Post</button>
       </div>
       
       <div className = "pic"></div>
