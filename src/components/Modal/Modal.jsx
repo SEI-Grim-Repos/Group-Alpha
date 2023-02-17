@@ -1,16 +1,28 @@
 import {useState, useEffect} from "react";
-import { getComments, createComment } from '../../services/comment.js'
-import { deletePost } from "../../services/post.js";
+import { getComments, createComment } from '../../services/comments.js'
+import { getPost, deletePost } from "../../services/post.js";
 import { useNavigate } from "react-router-dom";
 import * as BiIcons from "react-icons/bi";
 import './Modal.css';
 import { Edit_Form } from '../Edit_Form/Edit_Form.jsx'
 
-function Modal({ currentPost, setModalOpen }) {    
-    const [comments, setComments] = useState([]);
-    const [toggle, setToggle] = useState(false)
+function Modal({ currentPost, setModalOpen }) { 
+    
+    const [post, setPost] = useState({})
     const [newComment, setNewComment] = useState("");
     const [editFormOpen, setEditFormOpen ] = useState(false); 
+    const [toggle, setToggle] = useState(false)
+
+    let navigate = useNavigate();
+
+    useEffect(() => {
+        async function fetchPost() {
+            let response = await getPost(currentPost.id)
+            setPost(response)
+        }
+         fetchPost()
+    }, [toggle])
+
 
     const handleClose = () => {
       setModalOpen(false);
@@ -22,27 +34,12 @@ function Modal({ currentPost, setModalOpen }) {
 
     const handleCommentSubmit = async (event) => {
         event.preventDefault()
-        //postComment will be the post request 
 
-        const finalComment = {
-            user_id: currentPost.user_id,
-            body: newComment,
-            post: currentPost.id,
-        }
-
-        await createComment(finalComment)
+        await createComment({body: newComment}, post.post.id)
+        setNewComment("")
         setToggle(prev => !prev)
     };
 
-    let navigate = useNavigate();
-
-    useEffect(() => {
-        async function displayComments() {
-            let response = await getComments()
-            setComments(response)
-        }
-         displayComments()
-    }, [toggle])
 
 
     async function handleDelete (id) {
@@ -59,14 +56,14 @@ function Modal({ currentPost, setModalOpen }) {
         <div className="modal">
             <button className="closeButton" onClick={handleClose}>X</button>
             <div className='modal-content'>
-                <img src={currentPost.image}/>
-                <div className="title">{currentPost.title}</div>
-                <div>{currentPost.body}</div>
-                <div>Location: {currentPost.location}</div>
-                <div>Likes: {currentPost.likes}</div>
+                <img src={post.post?.image}/>
+                <div className="title">{post.post?.title}</div>
+                <div>{post.post?.body}</div>
+                <div>Location: {post.post?.location}</div>
+                <div>Likes: {post.post?.likes}</div>
                 <h3>Comments:</h3>
                 <div className="comments">
-                {comments.filter((comment) => comment.post === currentPost.id ).map((comments) => (<p>User {currentPost.user_id}: {comments.body}</p>))}
+                {post.comments?.map((comment) => (<p key={comment.id}>{comment.user}: {comment.body}</p>))}
                 </div>
                 <br />
                 <form onSubmit={handleCommentSubmit}>
