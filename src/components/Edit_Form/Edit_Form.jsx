@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { updatePost, deletePost } from "../../services/post.js";
-import * as BiIcons from "react-icons/bi";
 import "./Edit_Form.css";
 import React from "react";
 
@@ -16,7 +15,6 @@ function Edit_Form({ currentPost, setEditFormOpen }) {
     title: "",
     body: "",
     location: "",
-    image: "", //this will be a url
   });
 
   useEffect(() => {
@@ -35,11 +33,6 @@ function Edit_Form({ currentPost, setEditFormOpen }) {
     setEditFormOpen(false);
   };
 
-  async function handleDelete(currentPost) {
-    await deletePost(currentPost.id);
-    setEditFormOpen(false);
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     //this creates the updated Item object, which is necessary as not all values of necesarily been changed
@@ -54,7 +47,7 @@ function Edit_Form({ currentPost, setEditFormOpen }) {
       user_id: currentPost.user_id
     };
     //updatePost takes two arguments, the id and then the updated object
-    await updatePost(currentPost.id, updatedItem);
+    await updatePost(updatedItem, currentPost.id);
     setEditFormOpen(false);
     //have to use this rather than useNavigate since we are in a modal and not a different location
     window.location.reload();
