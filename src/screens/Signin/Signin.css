@@ -29,7 +29,7 @@
   justify-content: center;
   border-radius: 7px;
   height: 5vh;
-  width: 20vw;
+  width: 25vw;
   font-size: 24px;
   text-align: center;
   background-color: whitesmoke;
@@ -61,4 +61,18 @@ width: 90px;
 }
 .UsrMessage{
   color: black;
+}
+
+.inputUsername, .inputUserPassword {
+  margin: 0 auto;
+  margin: 10px auto 10px auto
+}
+
+@media screen and (max-width: 900px) {
+  .form23 {
+    width: 70vw;
+  }
+  .form23 input {
+    width: 40vw;
+  } 
 }
