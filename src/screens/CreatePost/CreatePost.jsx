@@ -43,6 +43,7 @@ return (
             name="image"
             value={post.image}
             onChange={handleChange}
+            
           ></input>
 
           <input
@@ -59,6 +60,7 @@ return (
             value={post.date}
             min="2023-01-01"
             onChange={handleChange}
+            
           ></input>
 
           <input
@@ -67,7 +69,9 @@ return (
             name="body"
             value={post.body}
             onChange={handleChange}></input>
-              <select name="location" onChange={handleChange} id = 'location' >
+              <select name="location"
+              className='countryAndCalendar'
+              onChange={handleChange} id = 'location' >
                 {COUNTRIES_LIST.map((cont, idx) => {
                     return(
                     <option value={cont[0]}>{cont[1]}</option>
@@ -79,7 +83,7 @@ return (
             value={post.likes}
             onChange={handleChange}></input>
            <br></br>
-            <button type="submit">Create Post</button>
+            <button className="create-Post" type="submit">Create Post</button>
         </form>
       </div>
     </div>
