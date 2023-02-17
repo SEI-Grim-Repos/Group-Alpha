@@ -50,6 +50,10 @@ function Signin() {
     Navigate("/sign-up")
   }
 
+  const handleSignIn = (e) => {
+    Navigate("/")
+  }
+
   return (
     <div className="DADdiv">
       <h1 className="title3">Sign In</h1>
@@ -58,7 +62,7 @@ function Signin() {
       <input onChange={handleChange} id="username"value={user.username} type="text" placeholder="Username" />
       <input onChange={handleChange}  id="password"value={user.password} type="password" placeholder="Password" />
       <div className="FatherButton">
-      <button className="ChildButton" type="submit">Sign In</button>
+      <button className="ChildButton" type="submit" onClick={handleSignIn}>Sign In</button>
       <button className="ChildButton" type="submit" onClick={HandleSignUp}>Sign Up</button>
       </div>
       </form>
